@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Dew VQA",
+  "version": "0.1.0",
+  "description": "Visual QA testing against Dew Design System tokens and Figma frames",
+  "permissions": ["activeTab", "sidePanel", "storage", "scripting"],
+  "host_permissions": ["https://api.figma.com/*", "https://api.anthropic.com/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "Open Dew VQA"
+  },
+  "icons": {}
+}

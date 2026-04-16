@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Requester Details — Figma Compare Test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      /* Dew Design Tokens (correct) */
+      --color-fill-surface: #ffffff;
+      --color-fill-container: #f6f7f8;
+      --color-fill-base: #e6e6e6;
+      --color-fill-semantic-info-mildest: #def0ff;
+      --color-fill-semantic-error-bold: #cd2629;
+      --color-text-primary: #12334c;
+      --color-text-secondary: #485a68;
+      --color-text-brand: #003fd2;
+      --color-text-placeholder: #8e9dac;
+      --color-text-disabled: #6f8396;
+      --color-text-inverse: #ffffff;
+      --color-text-semantic-info: #003fd2;
+      --color-boundary-border-mildest: #eaeef2;
+      --color-boundary-border-mild: #c9d3db;
+      --color-boundary-border: #8e9dac;
+      --color-boundary-brand: #276cf0;
+      --color-boundary-semantic-info-mild: #c1e2ff;
+      --color-boundary-semantic-error-bold: #a62426;
+      --color-icon-semantic-error: #cd2629;
+      --color-icon-inverse: #ffffff;
+      --color-shadow-5: rgba(18, 51, 76, 0.05);
+      --color-shadow-10: rgba(18, 51, 76, 0.1);
+      --color-shadow-20: rgba(18, 51, 76, 0.2);
+      --color-overlay-backdrop-bold: rgba(18, 51, 76, 0.5);
+      --border-radius-xsmall: 4px;
+      --border-radius-small: 6px;
+      --border-radius-medium: 8px;
+      --border-radius-large: 12px;
+      --border-radius-circular: 99px;
+      --opacity-half: 0.5;
+      --spacing-0: 0px;
+      --spacing-025: 2px;
+      --spacing-050: 4px;
+      --spacing-075: 6px;
+      --spacing-100: 8px;
+      --spacing-150: 12px;
+      --spacing-200: 16px;
+      --spacing-250: 20px;
+      --spacing-300: 24px;
+      --spacing-400: 32px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--color-fill-container);
+      color: var(--color-text-primary);
+      line-height: 1.5;
+    }
+
+    .page { position: relative; width: 1440px; height: 900px; margin: 0 auto; overflow: hidden; }
+
+    /* ─── Rail Nav (Left Sidebar) ─── */
+    .railnav {
+      position: absolute; left: 0; top: 0;
+      width: 64px; height: 900px;
+      background: var(--color-fill-container);
+      display: flex; flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+    }
+    .railnav-header { display: flex; flex-direction: column; flex: 1; }
+    .railnav-logo { padding: 16px; }
+    .railnav-logo-icon {
+      width: 32px; height: 32px; border-radius: 6px;
+      background: #1dbc9c; /* Freshservice green */
+    }
+    .railnav-menu {
+      display: flex; flex-direction: column; gap: 8px;
+      padding: 12px; flex: 1; overflow: auto;
+    }
+    .railnav-item {
+      width: 40px; height: 40px; border-radius: var(--border-radius-large);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--color-text-secondary);
+      font-size: 18px; cursor: pointer;
+    }
+    .railnav-item.active {
+      background: var(--color-fill-semantic-info-mildest);
+      border: 1px solid var(--color-boundary-semantic-info-mild);
+    }
+    .railnav-footer {
+      padding: 12px;
+      border-top: 1px solid var(--color-boundary-border-mildest);
+    }
+
+    /* ─── Top Navigation ─── */
+    .topnav {
+      position: absolute; left: 64px; top: 0;
+      width: 1376px; height: 64px;
+      background: var(--color-fill-container);
+      display: flex; align-items: center; gap: 16px;
+      padding: 0 16px;
+    }
+    .topnav-left { display: flex; align-items: center; gap: 20px; }
+    .topnav-icon { width: 16px; height: 16px; }
+    .breadcrumbs { display: flex; align-items: center; gap: 4px; }
+    .breadcrumb-link {
+      font-size: 14px; font-weight: 600; line-height: 20px;
+      color: var(--color-text-brand); letter-spacing: 0.04px;
+      text-decoration: none; cursor: pointer;
+    }
+    .breadcrumb-separator {
+      width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;
+      color: var(--color-text-placeholder); font-size: 14px;
+    }
+    .breadcrumb-current {
+      font-size: 14px; font-weight: 600; line-height: 20px;
+      color: var(--color-text-primary); letter-spacing: 0.04px;
+    }
+    .topnav-spacer { flex: 1; }
+    .topnav-right { display: flex; align-items: center; gap: 24px; }
+    .topnav-search-group { display: flex; align-items: center; gap: 12px; }
+    .topnav-search {
+      width: 380px; height: 32px;
+      background: var(--color-fill-surface);
+      border: 1px solid var(--color-boundary-border-mildest);
+      border-radius: var(--border-radius-medium);
+      display: flex; align-items: center; gap: 4px; padding: 0 8px;
+    }
+    .topnav-search-icon { color: var(--color-text-placeholder); font-size: 16px; width: 24px; text-align: center; }
+    .topnav-search-text {
+      flex: 1; font-size: 14px; color: var(--color-text-placeholder);
+      line-height: 20px; letter-spacing: 0.04px;
+    }
+    .topnav-search-shortcut {
+      background: var(--color-fill-container); padding: 0 6px;
+      border-radius: var(--border-radius-xsmall);
+      font-size: 14px; color: var(--color-text-placeholder); line-height: 20px;
+    }
+    .topnav-icons { display: flex; align-items: center; gap: 16px; }
+    .topnav-icon-btn {
+      width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;
+      color: var(--color-text-secondary); font-size: 16px; cursor: pointer; position: relative;
+    }
+    .notification-dot {
+      position: absolute; top: 2px; right: -2px;
+      width: 6px; height: 6px; border-radius: 7px;
+      background: var(--color-icon-semantic-error);
+      border: 1px solid var(--color-icon-inverse);
+    }
+    .topnav-avatar {
+      width: 32px; height: 32px; border-radius: 100px;
+      background: #dde3e9; overflow: hidden;
+    }
+
+    /* ─── Main Container ─── */
+    .main-container {
+      position: absolute; left: 64px; top: 64px;
+      width: 1368px; height: 836px;
+      background: var(--color-fill-surface);
+      border: 1px solid var(--color-boundary-border-mildest);
+      border-bottom: none;
+      border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+      box-shadow: 0px 1px 3px 0px var(--color-shadow-10), 0px 1px 2px 0px var(--color-shadow-5);
+      display: flex; overflow: hidden;
+    }
+
+    /* ─── Content Area ─── */
+    .content-area {
+      flex: 1; display: flex; flex-direction: column;
+      background: var(--color-fill-surface);
+      border-right: 1px solid var(--color-boundary-border-mildest);
+      overflow: hidden;
+    }
+
+    /* Header */
+    .page-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 32px;
+      background: var(--color-fill-surface);
+    }
+    .page-title {
+      font-size: 18px; font-weight: 600; line-height: 24px;
+      color: var(--color-text-primary);
+    }
+    .button-group { display: flex; gap: 8px; align-items: center; }
+
+    /* ── Buttons (Secondary) ─── */
+    .btn-secondary {
+      background: var(--color-fill-surface);
+      border: 1px solid var(--color-boundary-border-mildest);
+      border-radius: var(--border-radius-medium);
+      box-shadow: 1px 1px 2px 0px var(--color-shadow-5);
+      padding: 6px 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px; font-weight: 600; line-height: 20px;
+      color: var(--color-text-primary);
+      letter-spacing: 0.04px;
+      cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-icon-only {
+      padding: 6px; width: 32px; height: 32px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ── Destructive Button ─── */
+    .btn-destructive {
+      background: var(--color-fill-semantic-error-bold);
+      border: 1px solid var(--color-boundary-semantic-error-bold);
+      border-radius: var(--border-radius-medium);
+      padding: 6px 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px; font-weight: 600; line-height: 20px;
+      color: var(--color-text-inverse);
+      letter-spacing: 0.04px;
+      cursor: pointer; opacity: var(--opacity-half);
+    }
+
+    /* ─── Profile Section ─── */
+    .profile-section {
+      display: flex; gap: 32px; align-items: flex-start;
+      padding: 24px 32px 40px;
+      background: var(--color-fill-surface);
+    }
+    .avatar-large {
+      width: 96px; height: 96px; border-radius: 100px;
+      background: #c9d3db; flex-shrink: 0; overflow: hidden;
+    }
+    .user-info { display: flex; flex-direction: column; gap: 20px; flex: 1; }
+    .user-name {
+      font-size: 24px; font-weight: 600; line-height: 32px;
+      color: var(--color-text-primary);
+    }
+    .user-details {
+      display: flex; flex-wrap: wrap; gap: 24px;
+      width: 816px; line-height: 20px;
+    }
+    .detail-item { display: flex; flex-direction: column; gap: 4px; width: 256px; }
+    .detail-label {
+      font-size: 12px; font-weight: 400; line-height: 20px;
+      color: var(--color-text-secondary);
+      letter-spacing: 0.06px;
+    }
+    .detail-value {
+      font-size: 14px; font-weight: 600; line-height: 20px;
+      color: var(--color-text-primary);
+      letter-spacing: 0.04px;
+    }
+
+    /* ─── Tabs ─── */
+    .tabs {
+      display: flex; gap: 24px; align-items: flex-start;
+      padding: 8px 32px 0;
+      border-bottom: 1px solid var(--color-boundary-border-mildest);
+      background: var(--color-fill-surface);
+    }
+    .tab {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      cursor: pointer;
+    }
+    .tab-label {
+      font-size: 14px; font-weight: 500; line-height: 20px;
+      letter-spacing: 0.04px; padding: 0 8px;
+    }
+    .tab.active .tab-label { color: var(--color-text-brand); }
+    .tab:not(.active) .tab-label { color: var(--color-text-secondary); padding-bottom: 12px; }
+    .tab-indicator { width: 100%; height: 2px; border-radius: 1px; background: var(--color-boundary-brand); }
+    .tab-with-badge { display: flex; align-items: center; gap: 8px; }
+    .tab-badge {
+      background: var(--color-fill-container); padding: 0 8px;
+      border-radius: 8px; height: 16px;
+      font-size: 12px; font-weight: 600; line-height: 16px;
+      color: var(--color-text-secondary); /* INTENTIONAL MISMATCH: Figma uses #3b4854 */
+      text-align: center;
+    }
+
+    /* ─── Additional Info Section ─── */
+    .additional-info {
+      flex: 1; padding: 32px; background: white;
+      display: flex; flex-direction: column; gap: 28px;
+      overflow: auto;
+    }
+    .section-header {
+      display: flex; align-items: center; gap: 16px;
+    }
+    .section-chevron { width: 16px; height: 16px; color: var(--color-text-primary); }
+    .section-title {
+      font-size: 14px; font-weight: 600; line-height: 20px;
+      color: var(--color-text-primary);
+    }
+    .info-grid {
+      display: flex; flex-wrap: wrap; gap: 32px;
+      width: 512px; font-size: 14px; line-height: 20px;
+      letter-spacing: 0.04px;
+    }
+    .info-item { display: flex; flex-direction: column; gap: 4px; width: 240px; }
+    .info-label {
+      font-size: 14px; font-weight: 400; /* INTENTIONAL MISMATCH: Figma uses 12px for labels in this section */
+      color: var(--color-text-secondary);
+    }
+    .info-value {
+      font-size: 14px; font-weight: 600;
+      color: var(--color-text-primary);
+    }
+
+    /* ─── Tag Sidebar ─── */
+    .tag-sidebar {
+      width: 300px; padding: 24px;
+      background: var(--color-fill-surface);
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .tag-info { display: flex; flex-direction: column; gap: 4px; }
+    .tag-title {
+      font-size: 16px; font-weight: 600; line-height: 24px;
+      color: var(--color-text-primary); letter-spacing: 0.02px;
+    }
+    .tag-desc {
+      font-size: 14px; font-weight: 400; line-height: 20px;
+      color: var(--color-text-secondary); letter-spacing: 0.04px;
+    }
+
+    /* ─── Backdrop + Modal ─── */
+    .backdrop {
+      position: absolute; inset: 0;
+      background: var(--color-overlay-backdrop-bold);
+    }
+    .modal {
+      position: absolute;
+      left: 50%; top: 140px; transform: translateX(-50%);
+      width: 600px;
+      background: var(--color-fill-surface);
+      border: 1px solid var(--color-boundary-border-mildest);
+      border-radius: 12px;
+      box-shadow: 0px 0px 64px 4px var(--color-shadow-20);
+      overflow: hidden;
+      display: flex; flex-direction: column;
+    }
+    .modal-content { padding: 32px; display: flex; flex-direction: column; gap: 20px; }
+    .modal-title {
+      font-size: 18px; font-weight: 600; line-height: 24px;
+      color: var(--color-text-primary);
+    }
+    .modal-body-text {
+      font-size: 14px; font-weight: 400; line-height: 20px;
+      color: var(--color-text-primary); letter-spacing: 0.04px;
+    }
+    .modal-body-text strong { font-weight: 700; }
+
+    /* Radio options */
+    .radio-options { display: flex; flex-direction: column; gap: 24px; }
+    .radio-option { display: flex; gap: 8px; align-items: flex-start; }
+    .radio-circle {
+      width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .radio-circle-inner {
+      width: 14px; height: 14px;
+      border: 1px solid var(--color-boundary-border);
+      border-radius: var(--border-radius-medium);
+    }
+    .radio-content { display: flex; flex-direction: column; gap: 16px; flex: 1; }
+    .radio-header { display: flex; flex-direction: column; gap: 4px; }
+    .radio-title-row { display: flex; align-items: center; gap: 8px; padding: 2px 0; }
+    .radio-label {
+      font-size: 14px; font-weight: 600; line-height: 20px;
+      color: var(--color-text-primary); letter-spacing: 0.04px;
+    }
+    .tag-recommended {
+      background: var(--color-fill-semantic-info-mildest);
+      padding: 0 6px; border-radius: var(--border-radius-xsmall);
+      font-size: 12px; font-weight: 500; line-height: 20px;
+      color: var(--color-text-semantic-info); letter-spacing: 0.06px;
+    }
+    .radio-desc {
+      font-size: 12px; font-weight: 400; line-height: 20px;
+      color: var(--color-text-primary); letter-spacing: 0.06px;
+    }
+
+    /* Checkbox */
+    .checkbox-row { display: flex; gap: 8px; align-items: flex-start; }
+    .checkbox-box {
+      width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; padding: 2px;
+    }
+    .checkbox-inner {
+      width: 16px; height: 16px;
+      background: var(--color-fill-base);
+      border: 1px solid var(--color-boundary-border-mild);
+      border-radius: var(--border-radius-xsmall);
+    }
+    .checkbox-text { display: flex; flex-direction: column; gap: 2px; padding: 2px 0; flex: 1; }
+    .checkbox-label {
+      font-size: 14px; font-weight: 400; line-height: 20px;
+      color: var(--color-text-disabled); letter-spacing: 0.04px;
+    }
+    .checkbox-desc {
+      font-size: 12px; font-weight: 400; line-height: 20px;
+      color: var(--color-text-placeholder); letter-spacing: 0.06px;
+    }
+
+    /* Modal Footer */
+    .modal-footer {
+      display: flex; align-items: center; justify-content: flex-end;
+      gap: 12px; padding: 12px 16px;
+      background: var(--color-fill-container);
+      border-radius: 0 0 12px 12px;
+    }
+
+    /* ─── INTENTIONAL MISMATCHES FOR TESTING ─── */
+    /* These comments mark deliberate deviations from Figma */
+
+    /* 1. Wrong border-radius on Create button (should be 8px, using 6px) */
+    .btn-create { border-radius: 6px !important; }
+
+    /* 2. Wrong padding on modal (should be 32px, using 28px) */
+    .modal-content-wrong-padding { padding: 28px !important; }
+
+    /* 3. Wrong gap in user details (should be 24px, using 20px) */
+    .user-details-wrong-gap { gap: 20px !important; }
+
+    /* 4. Wrong font-size on info labels (should match 14px from Figma, using 13px) */
+    .info-label-wrong { font-size: 13px !important; }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ═══ Rail Navigation ═══ -->
+  <div class="railnav">
+    <div class="railnav-header">
+      <div class="railnav-logo">
+        <div class="railnav-logo-icon"></div>
+      </div>
+      <div class="railnav-menu">
+        <div class="railnav-item">◇</div>
+        <div class="railnav-item">◻</div>
+        <div class="railnav-item">☰</div>
+        <div class="railnav-item">⊞</div>
+        <div class="railnav-item">⊠</div>
+        <div class="railnav-item">☷</div>
+        <div class="railnav-item">▤</div>
+        <div class="railnav-item">⊡</div>
+        <div class="railnav-item">◎</div>
+        <div class="railnav-item">⊕</div>
+        <div class="railnav-item">⊗</div>
+        <div class="railnav-item">△</div>
+        <div class="railnav-item">◈</div>
+        <div class="railnav-item active">⚙</div>
+      </div>
+    </div>
+    <div class="railnav-footer">
+      <div class="railnav-item">⊞</div>
+    </div>
+  </div>
+
+  <!-- ═══ Top Navigation ═══ -->
+  <div class="topnav">
+    <div class="topnav-left">
+      <div class="topnav-icon">☰</div>
+      <div class="breadcrumbs">
+        <div class="breadcrumb-link">Global settings</div>
+        <div class="breadcrumb-separator">›</div>
+        <div class="breadcrumb-link">Requesters</div>
+        <div class="breadcrumb-separator">›</div>
+        <div class="breadcrumb-current">Andrew Mathews</div>
+      </div>
+    </div>
+    <div class="topnav-spacer"></div>
+    <div class="topnav-right">
+      <div class="topnav-search-group">
+        <div class="topnav-search">
+          <span class="topnav-search-icon">🔍</span>
+          <span class="topnav-search-text">Search</span>
+          <span class="topnav-search-shortcut">/</span>
+        </div>
+        <button class="btn-secondary btn-create">
+          <span>⊕</span>
+          <span>Create</span>
+        </button>
+      </div>
+      <div class="topnav-icons">
+        <div class="topnav-icon-btn">☐</div>
+        <div class="topnav-icon-btn">?</div>
+        <div class="topnav-icon-btn" style="position:relative">
+          🔔
+          <div class="notification-dot"></div>
+        </div>
+        <div class="topnav-icon-btn">⊞</div>
+      </div>
+      <div class="topnav-avatar"></div>
+    </div>
+  </div>
+
+  <!-- ═══ Main Container ═══ -->
+  <div class="main-container">
+
+    <!-- Content Area -->
+    <div class="content-area">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1 class="page-title">Requester details</h1>
+        <div class="button-group">
+          <button class="btn-secondary">Edit</button>
+          <button class="btn-secondary">Assume Identity</button>
+          <button class="btn-secondary">Convert to an Agent</button>
+          <button class="btn-secondary btn-icon-only">⋮</button>
+        </div>
+      </div>
+
+      <!-- Profile Section -->
+      <div class="profile-section">
+        <div class="avatar-large"></div>
+        <div class="user-info">
+          <h2 class="user-name">Andrew Mathews</h2>
+          <div class="user-details user-details-wrong-gap">
+            <div class="detail-item">
+              <span class="detail-label">Email</span>
+              <span class="detail-value">andrew.mathews@freshworks.com</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Title</span>
+              <span class="detail-value">Staff Product Designer</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Work Phone</span>
+              <span class="detail-value">+(555) 726 24</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Mobile Phone</span>
+              <span class="detail-value">+(555) 221 37</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Time Zone</span>
+              <span class="detail-value">San Jose</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Language</span>
+              <span class="detail-value">English</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <div class="tab active">
+          <span class="tab-label">Profile</span>
+          <div class="tab-indicator"></div>
+        </div>
+        <div class="tab">
+          <div class="tab-with-badge">
+            <span class="tab-label">Documents</span>
+            <span class="tab-badge">12</span>
+          </div>
+        </div>
+        <div class="tab">
+          <div class="tab-with-badge">
+            <span class="tab-label">Tickets</span>
+            <span class="tab-badge">2</span>
+          </div>
+        </div>
+        <div class="tab">
+          <div class="tab-with-badge">
+            <span class="tab-label">Assets</span>
+            <span class="tab-badge">3</span>
+          </div>
+        </div>
+        <div class="tab">
+          <span class="tab-label">Software</span>
+        </div>
+      </div>
+
+      <!-- Additional Information -->
+      <div class="additional-info">
+        <div class="section-header">
+          <span class="section-chevron">^</span>
+          <span class="section-title">Additional information</span>
+        </div>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">Time Format</span>
+            <span class="info-value">12h</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Reporting Manager</span>
+            <span class="info-value">Thomas Muller</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">VIP User</span>
+            <span class="info-value">No</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Background Information</span>
+            <span class="info-value">-</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Address</span>
+            <span class="info-value">-</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Location</span>
+            <span class="info-value">India, Asia</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Department</span>
+            <span class="info-value">-</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">D.O.J</span>
+            <span class="info-value">-</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Blood Group</span>
+            <span class="info-value">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tag Sidebar -->
+    <div class="tag-sidebar">
+      <div class="tag-info">
+        <h3 class="tag-title">Add Tags</h3>
+        <p class="tag-desc">Add tags to the requester for easy reference</p>
+      </div>
+      <button class="btn-secondary">
+        <span>+</span>
+        <span>Add Tags</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══ Modal Overlay ═══ -->
+  <div class="backdrop"></div>
+  <div class="modal">
+    <div class="modal-content">
+      <h2 class="modal-title">Forget user and manage their data</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <p class="modal-body-text">
+          Choose how to handle <strong>Andrew Mathews</strong> data. This action can't be undone.
+        </p>
+
+        <div class="radio-options">
+          <!-- Option 1 -->
+          <div class="radio-option">
+            <div class="radio-circle">
+              <div class="radio-circle-inner"></div>
+            </div>
+            <div class="radio-content">
+              <div class="radio-header">
+                <div class="radio-title-row">
+                  <span class="radio-label">Anonymize user data</span>
+                  <span class="tag-recommended">Recommended</span>
+                </div>
+                <p class="radio-desc">Replace this user's personal information with a generic identifier. Tickets, conversations, and activity will be retained.</p>
+              </div>
+              <!-- Checkbox -->
+              <div class="checkbox-row">
+                <div class="checkbox-box">
+                  <div class="checkbox-inner"></div>
+                </div>
+                <div class="checkbox-text">
+                  <span class="checkbox-label">Also remove attachments from their tickets</span>
+                  <span class="checkbox-desc">All attachments in tickets raised by this user will be permanently deleted.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Option 2 -->
+          <div class="radio-option">
+            <div class="radio-circle">
+              <div class="radio-circle-inner"></div>
+            </div>
+            <div class="radio-content">
+              <div class="radio-header">
+                <div class="radio-title-row">
+                  <span class="radio-label">Delete all data permanently</span>
+                </div>
+                <p class="radio-desc">Delete all tickets, notes, conversations, and activity by this user. Anonymization happens immediately..</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Footer -->
+    <div class="modal-footer">
+      <button class="btn-secondary">Cancel</button>
+      <button class="btn-destructive">Forget user</button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+/* Dew VQA - Content script styles */
+
+#dew-vqa-picker-highlight {
+  position: fixed;
+  pointer-events: none;
+  border: 2px solid #276cf0;
+  background: rgba(39, 108, 240, 0.1);
+  z-index: 999999;
+  transition: all 0.1s ease;
+}
+
+.dew-vqa-overlay {
+  pointer-events: none;
+  z-index: 999998;
+}
+
+.dew-vqa-badge {
+  pointer-events: auto;
+  cursor: default;
+}

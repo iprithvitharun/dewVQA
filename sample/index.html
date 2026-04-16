@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dew Component Test Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f6f7f8;
+      color: #12334c;
+      line-height: 1.5;
+    }
+
+    .page { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+
+    .section { margin-bottom: 40px; }
+    .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #12334c;
+    }
+    .section-desc {
+      font-size: 14px;
+      color: #485a68;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #eaeef2;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; }
+    .label { font-size: 12px; color: #6f8396; font-weight: 500; min-width: 120px; }
+
+    /* ─── Dew Button Styles ─── */
+
+    .dew-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 32px;
+      padding: 6px 12px;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      transition: all 0.15s ease;
+    }
+
+    /* Primary */
+    .dew-btn-primary {
+      background: #276cf0;
+      color: #ffffff;
+      border: 1px solid transparent;
+    }
+    .dew-btn-primary:hover { background: #003fd2; }
+
+    /* Secondary */
+    .dew-btn-secondary {
+      background: #ffffff;
+      color: #12334c;
+      border: 1px solid #eaeef2;
+      box-shadow: 1px 1px 2px 0px rgba(18, 51, 76, 0.05);
+    }
+    .dew-btn-secondary:hover { background: #f6f7f8; border-color: #dde3e9; }
+
+    /* Destructive */
+    .dew-btn-destructive {
+      background: #cd2629;
+      color: #ffffff;
+      border: 1px solid #a62426;
+    }
+    .dew-btn-destructive:hover { background: #a62426; }
+
+    /* Link */
+    .dew-btn-link {
+      background: transparent;
+      color: #003fd2;
+      border: 1px solid transparent;
+    }
+    .dew-btn-link:hover { background: #f6f7f8; }
+
+    /* Mini */
+    .dew-btn-mini {
+      height: 24px;
+      padding: 2px 8px;
+      font-size: 12px;
+      border-radius: 6px;
+    }
+
+    /* Disabled */
+    .dew-btn[aria-disabled="true"] {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ─── Dew Checkbox ─── */
+
+    .dew-checkbox-group { display: flex; flex-direction: column; gap: 12px; }
+
+    .dew-checkbox {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .dew-checkbox-indicator {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 1px solid #8e9dac;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .dew-checkbox-indicator.checked {
+      background: #276cf0;
+      border-color: #276cf0;
+    }
+
+    .dew-checkbox-indicator.checked::after {
+      content: '✓';
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .dew-checkbox-indicator.error {
+      border-color: #f33735;
+    }
+
+    .dew-checkbox-label { font-size: 14px; font-weight: 400; color: #12334c; }
+    .dew-checkbox-desc { font-size: 12px; font-weight: 400; color: #485a68; }
+
+    /* ─── Dew Banner ─── */
+
+    .dew-banner {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .dew-banner-info {
+      background: #def0ff;
+      border: 1px solid #c1e2ff;
+      color: #12334c;
+    }
+    .dew-banner-warning {
+      background: #feecd5;
+      border: 1px solid #fbc88c;
+      color: #12334c;
+    }
+    .dew-banner-error {
+      background: #ffe9ee;
+      border: 1px solid #ffc2cb;
+      color: #12334c;
+    }
+    .dew-banner-success {
+      background: #daf3ee;
+      border: 1px solid #9ddfd0;
+      color: #12334c;
+    }
+
+    .dew-banner-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ─── Dew Tag ─── */
+
+    .dew-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .dew-tag-info { background: #def0ff; color: #003fd2; }
+    .dew-tag-success { background: #daf3ee; color: #00795c; }
+    .dew-tag-warning { background: #feecd5; color: #ac5000; }
+    .dew-tag-error { background: #ffe9ee; color: #cd2629; }
+    .dew-tag-neutral { background: #f6f7f8; color: #485a68; }
+
+    /* ─── Dew Chips ─── */
+
+    .dew-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid #eaeef2;
+      background: #ffffff;
+      color: #12334c;
+      cursor: pointer;
+    }
+    .dew-chip.selected {
+      background: #def0ff;
+      border-color: #276cf0;
+      color: #003fd2;
+    }
+
+    /* ─── Intentional violations for testing ─── */
+
+    .violation-wrong-color { color: #1a2b3c; }
+    .violation-wrong-bg { background: #f0f1f3; }
+    .violation-wrong-border { border-color: #bcc5cf; }
+    .violation-wrong-radius { border-radius: 10px; }
+    .violation-wrong-spacing { padding: 7px 11px; }
+    .violation-wrong-font { font-family: Arial, sans-serif; }
+    .violation-low-contrast { color: #abb8c4; background: #ffffff; }
+
+    hr { border: none; border-top: 1px solid #eaeef2; margin: 32px 0; }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <h1 style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">Dew VQA Test Page</h1>
+  <p style="font-size: 14px; color: #485a68; margin-bottom: 32px;">
+    A sample page with Dew components to test the VQA extension. Includes both correct and intentionally broken components.
+  </p>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CORRECT DEW COMPONENTS -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <div class="section">
+    <h2 class="section-title">Buttons (Correct)</h2>
+    <p class="section-desc">These buttons use correct Dew tokens. Should pass VQA.</p>
+
+    <div class="card">
+      <div class="row">
+        <span class="label">Primary</span>
+        <button data-dew data-testid="button" data-variant="primary" data-size="default" class="dew-btn dew-btn-primary">
+          Save Changes
+        </button>
+        <button data-dew data-testid="button" data-variant="primary" data-size="mini" class="dew-btn dew-btn-primary dew-btn-mini">
+          Save
+        </button>
+        <button data-dew data-testid="button" data-variant="primary" data-size="default" aria-disabled="true" class="dew-btn dew-btn-primary">
+          Disabled
+        </button>
+      </div>
+
+      <div class="row">
+        <span class="label">Secondary</span>
+        <button data-dew data-testid="button" data-variant="secondary" data-size="default" class="dew-btn dew-btn-secondary">
+          Cancel
+        </button>
+        <button data-dew data-testid="button" data-variant="secondary" data-size="mini" class="dew-btn dew-btn-secondary dew-btn-mini">
+          Edit
+        </button>
+      </div>
+
+      <div class="row">
+        <span class="label">Destructive</span>
+        <button data-dew data-testid="button" data-variant="destructive" data-size="default" class="dew-btn dew-btn-destructive">
+          Delete Account
+        </button>
+      </div>
+
+      <div class="row">
+        <span class="label">Link</span>
+        <button data-dew data-testid="button" data-variant="link" data-size="default" class="dew-btn dew-btn-link">
+          Learn More
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- BUTTONS WITH VIOLATIONS -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <div class="section">
+    <h2 class="section-title">Buttons (With Violations)</h2>
+    <p class="section-desc">These buttons have intentional token violations. VQA should catch them.</p>
+
+    <div class="card">
+      <div class="row">
+        <span class="label">Wrong BG color</span>
+        <button data-dew data-testid="button" data-variant="primary" data-size="default"
+          class="dew-btn" style="background: #2e6dd4; color: #ffffff;">
+          Wrong Blue
+        </button>
+        <span style="font-size: 11px; color: #6f8396;">Expected: #276cf0, actual: #2e6dd4</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Wrong border</span>
+        <button data-dew data-testid="button" data-variant="secondary" data-size="default"
+          class="dew-btn" style="background: #ffffff; color: #12334c; border: 1px solid #bcc5cf; box-shadow: 1px 1px 2px rgba(18,51,76,0.05);">
+          Wrong Border
+        </button>
+        <span style="font-size: 11px; color: #6f8396;">Expected: #eaeef2, actual: #bcc5cf</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Wrong text color</span>
+        <button data-dew data-testid="button" data-variant="secondary" data-size="default"
+          class="dew-btn" style="background: #ffffff; color: #1a2b3c; border: 1px solid #eaeef2; box-shadow: 1px 1px 2px rgba(18,51,76,0.05);">
+          Wrong Text
+        </button>
+        <span style="font-size: 11px; color: #6f8396;">Expected: #12334c, actual: #1a2b3c</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Wrong radius</span>
+        <button data-dew data-testid="button" data-variant="primary" data-size="default"
+          class="dew-btn dew-btn-primary" style="border-radius: 16px;">
+          Pill Button
+        </button>
+        <span style="font-size: 11px; color: #6f8396;">Expected: 8px, actual: 16px</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Wrong spacing</span>
+        <button data-dew data-testid="button" data-variant="primary" data-size="default"
+          class="dew-btn dew-btn-primary violation-wrong-spacing">
+          Bad Padding
+        </button>
+        <span style="font-size: 11px; color: #6f8396;">Padding 7px/11px not on Dew scale</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Wrong font</span>
+        <button data-dew data-testid="button" data-variant="primary" data-size="default"
+          class="dew-btn dew-btn-primary violation-wrong-font">
+          Arial Font
+        </button>
+        <span style="font-size: 11px; color: #6f8396;">Should be Inter, using Arial</span>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CHECKBOXES -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <div class="section">
+    <h2 class="section-title">Checkboxes</h2>
+    <p class="section-desc">Mix of correct and incorrect checkbox implementations.</p>
+
+    <div class="card">
+      <div class="dew-checkbox-group">
+        <!-- Correct -->
+        <label data-dew data-testid="checkbox" class="dew-checkbox">
+          <span class="dew-checkbox-indicator checked"></span>
+          <span>
+            <span class="dew-checkbox-label">Enable notifications</span>
+            <br />
+            <span class="dew-checkbox-desc">Receive email alerts for new tickets</span>
+          </span>
+        </label>
+
+        <label data-dew data-testid="checkbox" class="dew-checkbox">
+          <span class="dew-checkbox-indicator"></span>
+          <span class="dew-checkbox-label">Auto-assign tickets</span>
+        </label>
+
+        <!-- Error state -->
+        <label data-dew data-testid="checkbox" class="dew-checkbox">
+          <span class="dew-checkbox-indicator error"></span>
+          <span>
+            <span class="dew-checkbox-label" style="color: #cd2629;">Accept terms and conditions</span>
+            <br />
+            <span class="dew-checkbox-desc" style="color: #a62426;">This field is required</span>
+          </span>
+        </label>
+
+        <!-- Disabled -->
+        <label data-dew data-testid="checkbox" aria-disabled="true" class="dew-checkbox" style="opacity: 0.5;">
+          <span class="dew-checkbox-indicator" style="background: #eceff1; border-color: #c9d3db;"></span>
+          <span class="dew-checkbox-label" style="color: #6f8396;">Locked setting (disabled)</span>
+        </label>
+
+        <!-- Wrong: non-token border -->
+        <label data-dew data-testid="checkbox" class="dew-checkbox">
+          <span class="dew-checkbox-indicator" style="border-color: #a0aab3;"></span>
+          <span class="dew-checkbox-label">Wrong border color on indicator</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- BANNERS -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <div class="section">
+    <h2 class="section-title">Banners</h2>
+
+    <div data-dew data-testid="banner" class="dew-banner dew-banner-info">
+      <span class="dew-banner-icon">ℹ️</span>
+      <span>Your trial expires in 3 days. <a href="#" style="color: #003fd2; font-weight: 500;">Upgrade now</a></span>
+    </div>
+
+    <div data-dew data-testid="banner" class="dew-banner dew-banner-warning">
+      <span class="dew-banner-icon">⚠️</span>
+      <span>Some agents haven't logged in this week. Check team activity.</span>
+    </div>
+
+    <div data-dew data-testid="banner" class="dew-banner dew-banner-error">
+      <span class="dew-banner-icon">❌</span>
+      <span>Email sync failed. Please reconnect your support email.</span>
+    </div>
+
+    <div data-dew data-testid="banner" class="dew-banner dew-banner-success">
+      <span class="dew-banner-icon">✅</span>
+      <span>Your email has been connected successfully!</span>
+    </div>
+
+    <!-- Wrong: non-token colors -->
+    <div data-dew data-testid="banner" class="dew-banner" style="background: #e8f0fe; border: 1px solid #a8c7fa; color: #1a3d6e;">
+      <span class="dew-banner-icon">ℹ️</span>
+      <span>This banner uses Google-style colors instead of Dew tokens.</span>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- TAGS -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <div class="section">
+    <h2 class="section-title">Tags</h2>
+
+    <div class="card">
+      <div class="row">
+        <span data-dew data-testid="tag" class="dew-tag dew-tag-info">Info</span>
+        <span data-dew data-testid="tag" class="dew-tag dew-tag-success">Active</span>
+        <span data-dew data-testid="tag" class="dew-tag dew-tag-warning">Pending</span>
+        <span data-dew data-testid="tag" class="dew-tag dew-tag-error">Failed</span>
+        <span data-dew data-testid="tag" class="dew-tag dew-tag-neutral">Draft</span>
+      </div>
+      <div class="row">
+        <!-- Wrong: non-token colors -->
+        <span data-dew data-testid="tag" class="dew-tag" style="background: #e3e8ef; color: #333333;">
+          Wrong Colors
+        </span>
+        <span style="font-size: 11px; color: #6f8396;">Non-Dew colors on this tag</span>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CHIPS -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <div class="section">
+    <h2 class="section-title">Chips</h2>
+
+    <div class="card">
+      <div class="row">
+        <span data-dew data-testid="chip" class="dew-chip">All Tickets</span>
+        <span data-dew data-testid="chip" class="dew-chip selected">Open</span>
+        <span data-dew data-testid="chip" class="dew-chip">Resolved</span>
+        <span data-dew data-testid="chip" class="dew-chip">Closed</span>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- NON-DEW ELEMENTS (for closest-token testing) -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <div class="section">
+    <h2 class="section-title">Non-Dew Elements (Legacy)</h2>
+    <p class="section-desc">These don't have data-dew. Should show "Not a Dew component" badge + closest token suggestion.</p>
+
+    <div class="card">
+      <div class="row">
+        <button style="background: #2962ff; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; font-size: 14px; cursor: pointer;">
+          Legacy Button
+        </button>
+        <span style="font-size: 11px; color: #6f8396;">Material blue — should suggest closest Dew fill token</span>
+      </div>
+
+      <div class="row">
+        <input type="text" placeholder="Search tickets..."
+          style="border: 1px solid #c4cdd6; border-radius: 6px; padding: 6px 12px; font-size: 14px; color: #333; width: 250px;" />
+        <span style="font-size: 11px; color: #6f8396;">Non-token border + text color</span>
+      </div>
+
+      <div class="row">
+        <div style="background: #f5f5f5; padding: 12px 16px; border-radius: 8px; border: 1px solid #e0e0e0; color: #424242; font-size: 14px;">
+          This card uses Material grays instead of Dew neutrals.
+        </div>
+      </div>
+
+      <div class="row">
+        <p class="violation-low-contrast" style="font-size: 14px; padding: 8px 12px;">
+          Low contrast text — should trigger WCAG blocker
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- CONTRAST TEST -->
+  <!-- ═══════════════════════════════════════════ -->
+
+  <div class="section">
+    <h2 class="section-title">Contrast Tests</h2>
+
+    <div class="card">
+      <div class="row">
+        <span style="color: #12334c; background: #ffffff; padding: 4px 8px; font-size: 14px;">
+          Good contrast (passes AA)
+        </span>
+      </div>
+      <div class="row">
+        <span style="color: #abb8c4; background: #ffffff; padding: 4px 8px; font-size: 14px;">
+          Poor contrast (fails AA)
+        </span>
+      </div>
+      <div class="row">
+        <span style="color: #c9d3db; background: #f6f7f8; padding: 4px 8px; font-size: 14px;">
+          Very poor contrast
+        </span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,5713 @@
+{
+  "rules": [
+    {
+      "component": "Banner",
+      "variant": "default",
+      "state": "background",
+      "property": "misc",
+      "tokenPath": "--color-fill-semantic-info-mildest",
+      "cssVar": "--color-fill-semantic-info-mildest",
+      "hex": "#def0ff"
+    },
+    {
+      "component": "Banner",
+      "variant": "default",
+      "state": "border",
+      "property": "misc",
+      "tokenPath": "--color-boundary-semantic-info-mild",
+      "cssVar": "--color-boundary-semantic-info-mild",
+      "hex": "#c1e2ff"
+    },
+    {
+      "component": "Banner",
+      "variant": "default",
+      "state": "icon color",
+      "property": "misc",
+      "tokenPath": "--color-icon-semantic-info",
+      "cssVar": "--color-icon-semantic-info",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Banner",
+      "variant": "default",
+      "state": "text color",
+      "property": "misc",
+      "tokenPath": "--color-text-primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Banner",
+      "variant": "default",
+      "state": "link color",
+      "property": "misc",
+      "tokenPath": "--color-text-brand",
+      "cssVar": "--color-text-brand",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Banner",
+      "variant": "default",
+      "state": "close button icon",
+      "property": "misc",
+      "tokenPath": "--color-icon-primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Breadcrumb",
+      "variant": "default",
+      "state": "link text",
+      "property": "misc",
+      "tokenPath": "--color-text-brand",
+      "cssVar": "--color-text-brand",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Breadcrumb",
+      "variant": "default",
+      "state": "link text",
+      "property": "misc",
+      "tokenPath": "--color-text-brand",
+      "cssVar": "--color-text-brand",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Breadcrumb",
+      "variant": "default",
+      "state": "current text",
+      "property": "misc",
+      "tokenPath": "--color-text-primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Breadcrumb",
+      "variant": "default",
+      "state": "separator icon",
+      "property": "misc",
+      "tokenPath": "--color-icon-secondary",
+      "cssVar": "--color-icon-secondary",
+      "hex": "#485a68"
+    },
+    {
+      "component": "Breadcrumb",
+      "variant": "default",
+      "state": "ellipsis button",
+      "property": "misc",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Breadcrumb",
+      "variant": "default",
+      "state": "dropdown bg",
+      "property": "misc",
+      "tokenPath": "--color-fill-surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Breadcrumb",
+      "variant": "default",
+      "state": "dropdown border",
+      "property": "misc",
+      "tokenPath": "--color-boundary-border-mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "normal",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Brand",
+      "cssVar": "--color-fill-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "normal",
+      "property": "color",
+      "tokenPath": "Color/Text/Inverse",
+      "cssVar": "--color-text-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Info/Bold",
+      "cssVar": "--color-fill-semantic-info-bold",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "hover",
+      "property": "color",
+      "tokenPath": "Color/Text/Inverse",
+      "cssVar": "--color-text-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "clicked",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Brand",
+      "cssVar": "--color-fill-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "clicked",
+      "property": "color",
+      "tokenPath": "Color/Text/Inverse",
+      "cssVar": "--color-text-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "clicked",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Border/Boldest",
+      "cssVar": "--color-boundary-border-boldest",
+      "hex": "#27313b"
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "clicked",
+      "property": "border-color",
+      "tokenPath": "shadow-active-button",
+      "cssVar": "shadow-active-button",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Brand",
+      "cssVar": "--color-fill-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "focus",
+      "property": "color",
+      "tokenPath": "Color/Text/Inverse",
+      "cssVar": "--color-text-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "focus",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Brand",
+      "cssVar": "--color-fill-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Opacity/Half",
+      "cssVar": "--opacity-half",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "primary",
+      "state": "disabled",
+      "property": "color",
+      "tokenPath": "Color/Text/Inverse",
+      "cssVar": "--color-text-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "normal",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "normal",
+      "property": "color",
+      "tokenPath": "Color/Text/Primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "normal",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Border/Mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "normal",
+      "property": "border-color",
+      "tokenPath": "shadow-xs",
+      "cssVar": "shadow-xs",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "hover",
+      "property": "color",
+      "tokenPath": "Color/Text/Primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "hover",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Border/Milder",
+      "cssVar": "--color-boundary-border-milder",
+      "hex": "#dde3e9"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "hover",
+      "property": "border-color",
+      "tokenPath": "shadow-xs",
+      "cssVar": "shadow-xs",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "clicked",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "clicked",
+      "property": "color",
+      "tokenPath": "Color/Text/Primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "clicked",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Border/Mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "clicked",
+      "property": "border-color",
+      "tokenPath": "shadow-active-button",
+      "cssVar": "shadow-active-button",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "focus",
+      "property": "color",
+      "tokenPath": "Color/Text/Primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "focus",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Border/Mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "focus",
+      "property": "border-color",
+      "tokenPath": "shadow-xs",
+      "cssVar": "shadow-xs",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "focus",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Opacity/Half",
+      "cssVar": "--opacity-half",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "disabled",
+      "property": "color",
+      "tokenPath": "Color/Text/Primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "disabled",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Border/Mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Button",
+      "variant": "secondary",
+      "state": "disabled",
+      "property": "border-color",
+      "tokenPath": "shadow-xs",
+      "cssVar": "shadow-xs",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "normal",
+      "property": "color",
+      "tokenPath": "Color/Text/Brand",
+      "cssVar": "--color-text-brand",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "hover",
+      "property": "color",
+      "tokenPath": "Color/Text/Brand",
+      "cssVar": "--color-text-brand",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "clicked",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "clicked",
+      "property": "color",
+      "tokenPath": "Color/Text/Brand",
+      "cssVar": "--color-text-brand",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "clicked",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Border/Mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "clicked",
+      "property": "border-color",
+      "tokenPath": "shadow-active-button",
+      "cssVar": "shadow-active-button",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "focus",
+      "property": "color",
+      "tokenPath": "Color/Text/Brand",
+      "cssVar": "--color-text-brand",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "focus",
+      "property": "border-color",
+      "tokenPath": "shadow-xs",
+      "cssVar": "shadow-xs",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "focus",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Opacity/Half",
+      "cssVar": "--opacity-half",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "disabled",
+      "property": "color",
+      "tokenPath": "Color/Text/Brand",
+      "cssVar": "--color-text-brand",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "disabled",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Border/Mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Button",
+      "variant": "link",
+      "state": "disabled",
+      "property": "border-color",
+      "tokenPath": "shadow-xs",
+      "cssVar": "shadow-xs",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "normal",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Error/Bold",
+      "cssVar": "--color-fill-semantic-error-bold",
+      "hex": "#cd2629"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "normal",
+      "property": "color",
+      "tokenPath": "Color/Text/Inverse",
+      "cssVar": "--color-text-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "normal",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Semantic/Error/Bold",
+      "cssVar": "--color-boundary-semantic-error-bold",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Error/Bolder",
+      "cssVar": "--color-fill-semantic-error-bolder",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "hover",
+      "property": "color",
+      "tokenPath": "Color/Text/Inverse",
+      "cssVar": "--color-text-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "hover",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Semantic/Error/Bold",
+      "cssVar": "--color-boundary-semantic-error-bold",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "clicked",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Error/Bold",
+      "cssVar": "--color-fill-semantic-error-bold",
+      "hex": "#cd2629"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "clicked",
+      "property": "color",
+      "tokenPath": "Color/Text/Inverse",
+      "cssVar": "--color-text-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "clicked",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Semantic/Error/Bold",
+      "cssVar": "--color-boundary-semantic-error-bold",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "clicked",
+      "property": "border-color",
+      "tokenPath": "shadow-active-button",
+      "cssVar": "shadow-active-button",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Error/Bold",
+      "cssVar": "--color-fill-semantic-error-bold",
+      "hex": "#cd2629"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "focus",
+      "property": "color",
+      "tokenPath": "Color/Text/Inverse",
+      "cssVar": "--color-text-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "focus",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Error/Bold",
+      "cssVar": "--color-fill-semantic-error-bold",
+      "hex": "#cd2629"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Opacity/Half",
+      "cssVar": "--opacity-half",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "disabled",
+      "property": "color",
+      "tokenPath": "Color/Text/Inverse",
+      "cssVar": "--color-text-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "destructive",
+      "state": "disabled",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Semantic/Error/Bold",
+      "cssVar": "--color-boundary-semantic-error-bold",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "normal",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "normal",
+      "property": "background-color",
+      "tokenPath": "Color/Boundary/Border/Mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "normal",
+      "property": "background-color",
+      "tokenPath": "shadow-xs",
+      "cssVar": "shadow-xs",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "normal",
+      "property": "background-color",
+      "tokenPath": "Color/Icon/Primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "normal",
+      "property": "background-color",
+      "tokenPath": "Color/Icon/Primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "Color/Boundary/Border/Milder",
+      "cssVar": "--color-boundary-border-milder",
+      "hex": "#dde3e9"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "shadow-sm",
+      "cssVar": "shadow-sm",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "Color/Icon/Primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "shadow-sm",
+      "cssVar": "shadow-sm",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "Color/Icon/Primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "clicked",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "clicked",
+      "property": "background-color",
+      "tokenPath": "Color/Boundary/Border/Mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "clicked",
+      "property": "background-color",
+      "tokenPath": "shadow-active-button",
+      "cssVar": "shadow-active-button",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "clicked",
+      "property": "background-color",
+      "tokenPath": "Color/Icon/Primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "clicked",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "clicked",
+      "property": "background-color",
+      "tokenPath": "shadow-active-button",
+      "cssVar": "shadow-active-button",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "clicked",
+      "property": "background-color",
+      "tokenPath": "Color/Icon/Primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "active",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+      "cssVar": "--color-fill-semantic-info-mildest",
+      "hex": "#def0ff"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "active",
+      "property": "background-color",
+      "tokenPath": "Color/Boundary/Brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "active",
+      "property": "background-color",
+      "tokenPath": "Color/Icon/Selected",
+      "cssVar": "--color-icon-selected",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "active",
+      "property": "background-color",
+      "tokenPath": "Color/Boundary/Brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "active",
+      "property": "background-color",
+      "tokenPath": "Color/Icon/Selected",
+      "cssVar": "--color-icon-selected",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "Color/Boundary/Brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "Color/Icon/Primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "Color/Boundary/Brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "Color/Icon/Primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Color/Boundary/Border/Mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "shadow-xs",
+      "cssVar": "shadow-xs",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Color/Icon/Disabled",
+      "cssVar": "--color-icon-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Button",
+      "variant": "icon",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Color/Icon/Disabled",
+      "cssVar": "--color-icon-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "normal",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+      "cssVar": "--color-fill-semantic-info-mildest",
+      "hex": "#def0ff"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "normal",
+      "property": "color",
+      "tokenPath": "Color/Text/Primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "normal",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Semantic/Info/Mild",
+      "cssVar": "--color-boundary-semantic-info-mild",
+      "hex": "#c1e2ff"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+      "cssVar": "--color-fill-semantic-info-mildest",
+      "hex": "#def0ff"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "hover",
+      "property": "color",
+      "tokenPath": "Color/Text/Primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "hover",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Semantic/Info/Mild",
+      "cssVar": "--color-boundary-semantic-info-mild",
+      "hex": "#c1e2ff"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "hover",
+      "property": "border-color",
+      "tokenPath": "shadow-xs",
+      "cssVar": "shadow-xs",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "clicked",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+      "cssVar": "--color-fill-semantic-info-mildest",
+      "hex": "#def0ff"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "clicked",
+      "property": "color",
+      "tokenPath": "Color/Text/Primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "clicked",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Semantic/Info/Mild",
+      "cssVar": "--color-boundary-semantic-info-mild",
+      "hex": "#c1e2ff"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "clicked",
+      "property": "border-color",
+      "tokenPath": "shadow-active-button",
+      "cssVar": "shadow-active-button",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "active",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+      "cssVar": "--color-fill-semantic-info-mildest",
+      "hex": "#def0ff"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "active",
+      "property": "color",
+      "tokenPath": "Color/Text/Primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "active",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "active",
+      "property": "border-color",
+      "tokenPath": "shadow-xs",
+      "cssVar": "shadow-xs",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+      "cssVar": "--color-fill-semantic-info-mildest",
+      "hex": "#def0ff"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "focus",
+      "property": "color",
+      "tokenPath": "Color/Text/Primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "focus",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+      "cssVar": "--color-fill-semantic-info-mildest",
+      "hex": "#def0ff"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Opacity/Half",
+      "cssVar": "--opacity-half",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "disabled",
+      "property": "color",
+      "tokenPath": "Color/Text/Primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "disabled",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Semantic/Info/Mild",
+      "cssVar": "--color-boundary-semantic-info-mild",
+      "hex": "#c1e2ff"
+    },
+    {
+      "component": "Button",
+      "variant": "custom",
+      "state": "disabled",
+      "property": "border-color",
+      "tokenPath": "shadow-xs",
+      "cssVar": "shadow-xs",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "normal",
+      "property": "color",
+      "tokenPath": "Color/Text/Semantic/Info",
+      "cssVar": "--color-text-semantic-info",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "normal",
+      "property": "color",
+      "tokenPath": "Color/Icon/Selected",
+      "cssVar": "--color-icon-selected",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "normal",
+      "property": "misc",
+      "tokenPath": "px/Regular",
+      "cssVar": "--px-regular",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "hover",
+      "property": "color",
+      "tokenPath": "Color/Text/Semantic/Info",
+      "cssVar": "--color-text-semantic-info",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "hover",
+      "property": "color",
+      "tokenPath": "Color/Icon/Selected",
+      "cssVar": "--color-icon-selected",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "hover",
+      "property": "misc",
+      "tokenPath": "px/Medium",
+      "cssVar": "--px-medium",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "focus",
+      "property": "color",
+      "tokenPath": "Color/Text/Semantic/Info",
+      "cssVar": "--color-text-semantic-info",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "focus",
+      "property": "color",
+      "tokenPath": "Color/Icon/Selected",
+      "cssVar": "--color-icon-selected",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "focus",
+      "property": "misc",
+      "tokenPath": "px/Medium",
+      "cssVar": "--px-medium",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "focus",
+      "property": "misc",
+      "tokenPath": "Color/Boundary/Brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "focus",
+      "property": "misc",
+      "tokenPath": "radius/xsmall",
+      "cssVar": "--radius-xsmall",
+      "hex": ""
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "disabled",
+      "property": "color",
+      "tokenPath": "Color/Text/Disabled",
+      "cssVar": "--color-text-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "disabled",
+      "property": "color",
+      "tokenPath": "Color/Icon/Disabled",
+      "cssVar": "--color-icon-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Button",
+      "variant": "hyperlink",
+      "state": "disabled",
+      "property": "misc",
+      "tokenPath": "px/Regular",
+      "cssVar": "--px-regular",
+      "hex": ""
+    },
+    {
+      "component": "Checkbox",
+      "variant": "unchecked",
+      "state": "default",
+      "property": "background-color",
+      "tokenPath": "--color-fill-surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "unchecked",
+      "state": "default",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-border",
+      "cssVar": "--color-boundary-border",
+      "hex": "#8e9dac"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "unchecked",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "--color-fill-surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "unchecked",
+      "state": "hover",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-border-milder",
+      "cssVar": "--color-boundary-border-milder",
+      "hex": "#dde3e9"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "unchecked",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "--color-fill-surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "unchecked",
+      "state": "focus",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "unchecked",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "--color-fill-base",
+      "cssVar": "--color-fill-base",
+      "hex": "#eceff1"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "unchecked",
+      "state": "disabled",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-border-mild",
+      "cssVar": "--color-boundary-border-mild",
+      "hex": "#c9d3db"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "unchecked",
+      "state": "error",
+      "property": "background-color",
+      "tokenPath": "--color-fill-surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "unchecked",
+      "state": "error",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-semantic-error",
+      "cssVar": "--color-boundary-semantic-error",
+      "hex": "#f33735"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "default",
+      "property": "background-color",
+      "tokenPath": "--color-fill-brand",
+      "cssVar": "--color-fill-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "default",
+      "property": "color",
+      "tokenPath": "--color-icon-inverse",
+      "cssVar": "--color-icon-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "--color-fill-brand",
+      "cssVar": "--color-fill-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "hover",
+      "property": "color",
+      "tokenPath": "--color-icon-inverse",
+      "cssVar": "--color-icon-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "hover",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-border-milder",
+      "cssVar": "--color-boundary-border-milder",
+      "hex": "#dde3e9"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "--color-fill-brand",
+      "cssVar": "--color-fill-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "focus",
+      "property": "color",
+      "tokenPath": "--color-icon-inverse",
+      "cssVar": "--color-icon-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "focus",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "--color-fill-base",
+      "cssVar": "--color-fill-base",
+      "hex": "#eceff1"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "disabled",
+      "property": "color",
+      "tokenPath": "--color-icon-disabled",
+      "cssVar": "--color-icon-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "disabled",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-border-mild",
+      "cssVar": "--color-boundary-border-mild",
+      "hex": "#c9d3db"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "error",
+      "property": "background-color",
+      "tokenPath": "--color-fill-semantic-error",
+      "cssVar": "--color-fill-semantic-error",
+      "hex": "#f33735"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "checked",
+      "state": "error",
+      "property": "color",
+      "tokenPath": "--color-icon-inverse",
+      "cssVar": "--color-icon-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "default",
+      "property": "background-color",
+      "tokenPath": "--color-fill-neutral",
+      "cssVar": "--color-fill-neutral",
+      "hex": "#1b3e59"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "default",
+      "property": "color",
+      "tokenPath": "--color-icon-inverse",
+      "cssVar": "--color-icon-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "--color-fill-neutral",
+      "cssVar": "--color-fill-neutral",
+      "hex": "#1b3e59"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "hover",
+      "property": "color",
+      "tokenPath": "--color-icon-inverse",
+      "cssVar": "--color-icon-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "hover",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-border-milder",
+      "cssVar": "--color-boundary-border-milder",
+      "hex": "#dde3e9"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "--color-fill-neutral",
+      "cssVar": "--color-fill-neutral",
+      "hex": "#1b3e59"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "focus",
+      "property": "color",
+      "tokenPath": "--color-icon-inverse",
+      "cssVar": "--color-icon-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "focus",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "--color-fill-base",
+      "cssVar": "--color-fill-base",
+      "hex": "#eceff1"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "disabled",
+      "property": "color",
+      "tokenPath": "--color-icon-disabled",
+      "cssVar": "--color-icon-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "disabled",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-border-mild",
+      "cssVar": "--color-boundary-border-mild",
+      "hex": "#c9d3db"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "error",
+      "property": "background-color",
+      "tokenPath": "--color-fill-semantic-error",
+      "cssVar": "--color-fill-semantic-error",
+      "hex": "#f33735"
+    },
+    {
+      "component": "Checkbox",
+      "variant": "indeterminate",
+      "state": "error",
+      "property": "color",
+      "tokenPath": "--color-icon-inverse",
+      "cssVar": "--color-icon-inverse",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**normal**",
+      "property": "background-color",
+      "tokenPath": "--color-fill-container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**normal**",
+      "property": "color",
+      "tokenPath": "--color-text-primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**normal hover**",
+      "property": "background-color",
+      "tokenPath": "--color-fill-container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**normal hover**",
+      "property": "color",
+      "tokenPath": "--color-text-primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**normal hover**",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-border-milder",
+      "cssVar": "--color-boundary-border-milder",
+      "hex": "#dde3e9"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**focus**",
+      "property": "background-color",
+      "tokenPath": "--color-fill-container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**focus**",
+      "property": "color",
+      "tokenPath": "--color-text-primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**focus**",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**selected**",
+      "property": "background-color",
+      "tokenPath": "--color-fill-container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**selected**",
+      "property": "color",
+      "tokenPath": "--color-text-primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**selected**",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error**",
+      "property": "background-color",
+      "tokenPath": "--color-fill-semantic-error-mildest",
+      "cssVar": "--color-fill-semantic-error-mildest",
+      "hex": "#ffe9ee"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error**",
+      "property": "color",
+      "tokenPath": "--color-text-primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error**",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-semantic-error-bold",
+      "cssVar": "--color-boundary-semantic-error-bold",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error hover**",
+      "property": "background-color",
+      "tokenPath": "--color-fill-semantic-error-mildest",
+      "cssVar": "--color-fill-semantic-error-mildest",
+      "hex": "#ffe9ee"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error hover**",
+      "property": "color",
+      "tokenPath": "--color-text-primary",
+      "cssVar": "--color-text-primary",
+      "hex": "#12334c"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error hover**",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-semantic-error-bold",
+      "cssVar": "--color-boundary-semantic-error-bold",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**disabled**",
+      "property": "background-color",
+      "tokenPath": "--color-fill-base",
+      "cssVar": "--color-fill-base",
+      "hex": "#eceff1"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**disabled**",
+      "property": "color",
+      "tokenPath": "--color-text-disabled",
+      "cssVar": "--color-text-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "default",
+      "property": "color",
+      "tokenPath": "--color-icon-primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**hover**",
+      "property": "color",
+      "tokenPath": "--color-icon-primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**hover**",
+      "property": "background-color",
+      "tokenPath": "--color-overlay-neutral",
+      "cssVar": "--color-overlay-neutral",
+      "hex": "#abb8c4"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "focus",
+      "property": "color",
+      "tokenPath": "--color-icon-primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "disabled",
+      "property": "color",
+      "tokenPath": "--color-icon-disabled",
+      "cssVar": "--color-icon-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "normal",
+      "property": "misc",
+      "tokenPath": "--color-fill-container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**normal hover**",
+      "property": "misc",
+      "tokenPath": "--color-boundary-border-milder",
+      "cssVar": "--color-boundary-border-milder",
+      "hex": "#dde3e9"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**focus**",
+      "property": "misc",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**selected**",
+      "property": "misc",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error**",
+      "property": "misc",
+      "tokenPath": "--color-fill-semantic-error-mildest",
+      "cssVar": "--color-fill-semantic-error-mildest",
+      "hex": "#ffe9ee"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error**",
+      "property": "misc",
+      "tokenPath": "--color-boundary-semantic-error-bold",
+      "cssVar": "--color-boundary-semantic-error-bold",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error hover**",
+      "property": "misc",
+      "tokenPath": "--color-boundary-semantic-error-bold",
+      "cssVar": "--color-boundary-semantic-error-bold",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**disabled**",
+      "property": "misc",
+      "tokenPath": "--color-fill-base",
+      "cssVar": "--color-fill-base",
+      "hex": "#eceff1"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**disabled**",
+      "property": "misc",
+      "tokenPath": "--color-text-disabled",
+      "cssVar": "--color-text-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "default",
+      "property": "misc",
+      "tokenPath": "--color-fill-container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "hover",
+      "property": "misc",
+      "tokenPath": "--color-boundary-border-milder",
+      "cssVar": "--color-boundary-border-milder",
+      "hex": "#dde3e9"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**selected**",
+      "property": "misc",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error**",
+      "property": "misc",
+      "tokenPath": "--color-fill-semantic-error-mildest",
+      "cssVar": "--color-fill-semantic-error-mildest",
+      "hex": "#ffe9ee"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error**",
+      "property": "misc",
+      "tokenPath": "--color-boundary-semantic-error-bold",
+      "cssVar": "--color-boundary-semantic-error-bold",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error hover**",
+      "property": "misc",
+      "tokenPath": "--color-boundary-semantic-error-bold",
+      "cssVar": "--color-boundary-semantic-error-bold",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "focus-visible",
+      "property": "misc",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**disabled**",
+      "property": "misc",
+      "tokenPath": "--color-fill-base",
+      "cssVar": "--color-fill-base",
+      "hex": "#eceff1"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**disabled**",
+      "property": "misc",
+      "tokenPath": "--color-text-disabled",
+      "cssVar": "--color-text-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "default",
+      "property": "misc",
+      "tokenPath": "--color-fill-container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "hover",
+      "property": "misc",
+      "tokenPath": "--color-boundary-border-milder",
+      "cssVar": "--color-boundary-border-milder",
+      "hex": "#dde3e9"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**selected**",
+      "property": "misc",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error**",
+      "property": "misc",
+      "tokenPath": "--color-fill-semantic-error-mildest",
+      "cssVar": "--color-fill-semantic-error-mildest",
+      "hex": "#ffe9ee"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error**",
+      "property": "misc",
+      "tokenPath": "--color-boundary-semantic-error-bold",
+      "cssVar": "--color-boundary-semantic-error-bold",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**error hover**",
+      "property": "misc",
+      "tokenPath": "--color-boundary-semantic-error-bold",
+      "cssVar": "--color-boundary-semantic-error-bold",
+      "hex": "#a62426"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "focus-visible",
+      "property": "misc",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**disabled**",
+      "property": "misc",
+      "tokenPath": "--color-fill-base",
+      "cssVar": "--color-fill-base",
+      "hex": "#eceff1"
+    },
+    {
+      "component": "Chips",
+      "variant": "default",
+      "state": "**disabled**",
+      "property": "misc",
+      "tokenPath": "--color-text-disabled",
+      "cssVar": "--color-text-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "InlineMessage",
+      "variant": "link",
+      "state": "default",
+      "property": "misc",
+      "tokenPath": "--color-text-brand",
+      "cssVar": "--color-text-brand",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "InlineMessage",
+      "variant": "link",
+      "state": "hover",
+      "property": "misc",
+      "tokenPath": "--color-text-brand",
+      "cssVar": "--color-text-brand",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "InlineMessage",
+      "variant": "link",
+      "state": "active",
+      "property": "misc",
+      "tokenPath": "--color-text-brand",
+      "cssVar": "--color-text-brand",
+      "hex": "#003fd2"
+    },
+    {
+      "component": "InlineMessage",
+      "variant": "link",
+      "state": "focus",
+      "property": "misc",
+      "tokenPath": "--color-focus-ring",
+      "cssVar": "--color-focus-ring",
+      "hex": ""
+    },
+    {
+      "component": "Search",
+      "variant": "default",
+      "state": "default",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Border/Milder",
+      "cssVar": "--color-boundary-border-milder",
+      "hex": "#dde3e9"
+    },
+    {
+      "component": "Search",
+      "variant": "default",
+      "state": "default",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Search",
+      "variant": "default",
+      "state": "default",
+      "property": "color",
+      "tokenPath": "Color/Icon/Disabled",
+      "cssVar": "--color-icon-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Search",
+      "variant": "default",
+      "state": "hover",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Border",
+      "cssVar": "--color-boundary-border",
+      "hex": "#8e9dac"
+    },
+    {
+      "component": "Search",
+      "variant": "default",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Search",
+      "variant": "default",
+      "state": "hover",
+      "property": "color",
+      "tokenPath": "Color/Icon/Disabled",
+      "cssVar": "--color-icon-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Search",
+      "variant": "default",
+      "state": "active",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Search",
+      "variant": "default",
+      "state": "active",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Search",
+      "variant": "default",
+      "state": "active",
+      "property": "color",
+      "tokenPath": "Color/Icon/Primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Search",
+      "variant": "default",
+      "state": "disabled",
+      "property": "border-color",
+      "tokenPath": "Color/Boundary/Border/Mild",
+      "cssVar": "--color-boundary-border-mild",
+      "hex": "#c9d3db"
+    },
+    {
+      "component": "Search",
+      "variant": "default",
+      "state": "disabled",
+      "property": "background-color",
+      "tokenPath": "Color/Fill/Container",
+      "cssVar": "--color-fill-container",
+      "hex": "#f6f7f8"
+    },
+    {
+      "component": "Search",
+      "variant": "default",
+      "state": "disabled",
+      "property": "color",
+      "tokenPath": "Color/Icon/Disabled",
+      "cssVar": "--color-icon-disabled",
+      "hex": "#6f8396"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "default",
+      "property": "background-color",
+      "tokenPath": "--color-fill-surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "default",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-border-mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "--color-fill-surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "hover",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-border-mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "selected",
+      "property": "background-color",
+      "tokenPath": "--color-overlay-semantic-info-light",
+      "cssVar": "--color-overlay-semantic-info-light",
+      "hex": "#a5d2ff"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "selected",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-border-mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "clicked/focused",
+      "property": "background-color",
+      "tokenPath": "--color-overlay-semantic-info-light",
+      "cssVar": "--color-overlay-semantic-info-light",
+      "hex": "#a5d2ff"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "clicked/focused",
+      "property": "border-color",
+      "tokenPath": "--color-boundary-border-mildest",
+      "cssVar": "--color-boundary-border-mildest",
+      "hex": "#eaeef2"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "default",
+      "property": "misc",
+      "tokenPath": "--color-fill-surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "hover",
+      "property": "misc",
+      "tokenPath": "--color-overlay-neutral",
+      "cssVar": "--color-overlay-neutral",
+      "hex": "#abb8c4"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "selected",
+      "property": "misc",
+      "tokenPath": "--color-overlay-semantic-info-light",
+      "cssVar": "--color-overlay-semantic-info-light",
+      "hex": "#a5d2ff"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "clicked/focused",
+      "property": "misc",
+      "tokenPath": "clicked/active",
+      "cssVar": "--clicked-active",
+      "hex": ""
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "clicked/focused",
+      "property": "misc",
+      "tokenPath": "--color-overlay-semantic-info-light",
+      "cssVar": "--color-overlay-semantic-info-light",
+      "hex": "#a5d2ff"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "default",
+      "property": "misc",
+      "tokenPath": "--color-fill-surface",
+      "cssVar": "--color-fill-surface",
+      "hex": "#ffffff"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "hover",
+      "property": "misc",
+      "tokenPath": "--color-overlay-neutral",
+      "cssVar": "--color-overlay-neutral",
+      "hex": "#abb8c4"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "selected",
+      "property": "misc",
+      "tokenPath": "--color-overlay-semantic-info-light",
+      "cssVar": "--color-overlay-semantic-info-light",
+      "hex": "#a5d2ff"
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "clicked/focused",
+      "property": "misc",
+      "tokenPath": "clicked/active",
+      "cssVar": "--clicked-active",
+      "hex": ""
+    },
+    {
+      "component": "Table",
+      "variant": "default",
+      "state": "clicked/focused",
+      "property": "misc",
+      "tokenPath": "--color-overlay-semantic-info-light",
+      "cssVar": "--color-overlay-semantic-info-light",
+      "hex": "#a5d2ff"
+    },
+    {
+      "component": "Tag",
+      "variant": "default",
+      "state": "default",
+      "property": "color",
+      "tokenPath": "--color-icon-primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Tag",
+      "variant": "default",
+      "state": "hover",
+      "property": "color",
+      "tokenPath": "--color-icon-primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Tag",
+      "variant": "default",
+      "state": "hover",
+      "property": "background-color",
+      "tokenPath": "--color-overlay-neutral",
+      "cssVar": "--color-overlay-neutral",
+      "hex": "#abb8c4"
+    },
+    {
+      "component": "Tag",
+      "variant": "default",
+      "state": "focus",
+      "property": "color",
+      "tokenPath": "--color-icon-primary",
+      "cssVar": "--color-icon-primary",
+      "hex": "#2b3640"
+    },
+    {
+      "component": "Tag",
+      "variant": "default",
+      "state": "focus",
+      "property": "background-color",
+      "tokenPath": "--color-boundary-brand",
+      "cssVar": "--color-boundary-brand",
+      "hex": "#276cf0"
+    },
+    {
+      "component": "Tag",
+      "variant": "default",
+      "state": "disabled",
+      "property": "color",
+      "tokenPath": "--color-icon-disabled",
+      "cssVar": "--color-icon-disabled",
+      "hex": "#6f8396"
+    }
+  ],
+  "lookup": {
+    "banner": {
+      "default": {
+        "background": {
+          "misc": [
+            {
+              "component": "Banner",
+              "variant": "default",
+              "state": "background",
+              "property": "misc",
+              "tokenPath": "--color-fill-semantic-info-mildest",
+              "cssVar": "--color-fill-semantic-info-mildest",
+              "hex": "#def0ff"
+            }
+          ]
+        },
+        "border": {
+          "misc": [
+            {
+              "component": "Banner",
+              "variant": "default",
+              "state": "border",
+              "property": "misc",
+              "tokenPath": "--color-boundary-semantic-info-mild",
+              "cssVar": "--color-boundary-semantic-info-mild",
+              "hex": "#c1e2ff"
+            }
+          ]
+        },
+        "icon color": {
+          "misc": [
+            {
+              "component": "Banner",
+              "variant": "default",
+              "state": "icon color",
+              "property": "misc",
+              "tokenPath": "--color-icon-semantic-info",
+              "cssVar": "--color-icon-semantic-info",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "text color": {
+          "misc": [
+            {
+              "component": "Banner",
+              "variant": "default",
+              "state": "text color",
+              "property": "misc",
+              "tokenPath": "--color-text-primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ]
+        },
+        "link color": {
+          "misc": [
+            {
+              "component": "Banner",
+              "variant": "default",
+              "state": "link color",
+              "property": "misc",
+              "tokenPath": "--color-text-brand",
+              "cssVar": "--color-text-brand",
+              "hex": "#003fd2"
+            }
+          ]
+        },
+        "close button icon": {
+          "misc": [
+            {
+              "component": "Banner",
+              "variant": "default",
+              "state": "close button icon",
+              "property": "misc",
+              "tokenPath": "--color-icon-primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            }
+          ]
+        }
+      }
+    },
+    "breadcrumb": {
+      "default": {
+        "link text": {
+          "misc": [
+            {
+              "component": "Breadcrumb",
+              "variant": "default",
+              "state": "link text",
+              "property": "misc",
+              "tokenPath": "--color-text-brand",
+              "cssVar": "--color-text-brand",
+              "hex": "#003fd2"
+            },
+            {
+              "component": "Breadcrumb",
+              "variant": "default",
+              "state": "link text",
+              "property": "misc",
+              "tokenPath": "--color-text-brand",
+              "cssVar": "--color-text-brand",
+              "hex": "#003fd2"
+            }
+          ]
+        },
+        "current text": {
+          "misc": [
+            {
+              "component": "Breadcrumb",
+              "variant": "default",
+              "state": "current text",
+              "property": "misc",
+              "tokenPath": "--color-text-primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ]
+        },
+        "separator icon": {
+          "misc": [
+            {
+              "component": "Breadcrumb",
+              "variant": "default",
+              "state": "separator icon",
+              "property": "misc",
+              "tokenPath": "--color-icon-secondary",
+              "cssVar": "--color-icon-secondary",
+              "hex": "#485a68"
+            }
+          ]
+        },
+        "ellipsis button": {
+          "misc": [
+            {
+              "component": "Breadcrumb",
+              "variant": "default",
+              "state": "ellipsis button",
+              "property": "misc",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "dropdown bg": {
+          "misc": [
+            {
+              "component": "Breadcrumb",
+              "variant": "default",
+              "state": "dropdown bg",
+              "property": "misc",
+              "tokenPath": "--color-fill-surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ]
+        },
+        "dropdown border": {
+          "misc": [
+            {
+              "component": "Breadcrumb",
+              "variant": "default",
+              "state": "dropdown border",
+              "property": "misc",
+              "tokenPath": "--color-boundary-border-mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            }
+          ]
+        }
+      }
+    },
+    "button": {
+      "primary": {
+        "normal": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "normal",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Brand",
+              "cssVar": "--color-fill-brand",
+              "hex": "#276cf0"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "normal",
+              "property": "color",
+              "tokenPath": "Color/Text/Inverse",
+              "cssVar": "--color-text-inverse",
+              "hex": "#ffffff"
+            }
+          ]
+        },
+        "hover": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Info/Bold",
+              "cssVar": "--color-fill-semantic-info-bold",
+              "hex": "#003fd2"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "hover",
+              "property": "color",
+              "tokenPath": "Color/Text/Inverse",
+              "cssVar": "--color-text-inverse",
+              "hex": "#ffffff"
+            }
+          ]
+        },
+        "clicked": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "clicked",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Brand",
+              "cssVar": "--color-fill-brand",
+              "hex": "#276cf0"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "clicked",
+              "property": "color",
+              "tokenPath": "Color/Text/Inverse",
+              "cssVar": "--color-text-inverse",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "clicked",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Border/Boldest",
+              "cssVar": "--color-boundary-border-boldest",
+              "hex": "#27313b"
+            },
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "clicked",
+              "property": "border-color",
+              "tokenPath": "shadow-active-button",
+              "cssVar": "shadow-active-button",
+              "hex": ""
+            }
+          ]
+        },
+        "focus": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Brand",
+              "cssVar": "--color-fill-brand",
+              "hex": "#276cf0"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "focus",
+              "property": "color",
+              "tokenPath": "Color/Text/Inverse",
+              "cssVar": "--color-text-inverse",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "focus",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "disabled": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Brand",
+              "cssVar": "--color-fill-brand",
+              "hex": "#276cf0"
+            },
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Opacity/Half",
+              "cssVar": "--opacity-half",
+              "hex": ""
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "primary",
+              "state": "disabled",
+              "property": "color",
+              "tokenPath": "Color/Text/Inverse",
+              "cssVar": "--color-text-inverse",
+              "hex": "#ffffff"
+            }
+          ]
+        }
+      },
+      "secondary": {
+        "normal": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "normal",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "normal",
+              "property": "color",
+              "tokenPath": "Color/Text/Primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "normal",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Border/Mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            },
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "normal",
+              "property": "border-color",
+              "tokenPath": "shadow-xs",
+              "cssVar": "shadow-xs",
+              "hex": ""
+            }
+          ]
+        },
+        "hover": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "hover",
+              "property": "color",
+              "tokenPath": "Color/Text/Primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "hover",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Border/Milder",
+              "cssVar": "--color-boundary-border-milder",
+              "hex": "#dde3e9"
+            },
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "hover",
+              "property": "border-color",
+              "tokenPath": "shadow-xs",
+              "cssVar": "shadow-xs",
+              "hex": ""
+            }
+          ]
+        },
+        "clicked": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "clicked",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "clicked",
+              "property": "color",
+              "tokenPath": "Color/Text/Primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "clicked",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Border/Mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            },
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "clicked",
+              "property": "border-color",
+              "tokenPath": "shadow-active-button",
+              "cssVar": "shadow-active-button",
+              "hex": ""
+            }
+          ]
+        },
+        "focus": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "focus",
+              "property": "color",
+              "tokenPath": "Color/Text/Primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "focus",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Border/Mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            },
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "focus",
+              "property": "border-color",
+              "tokenPath": "shadow-xs",
+              "cssVar": "shadow-xs",
+              "hex": ""
+            },
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "focus",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "disabled": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            },
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Opacity/Half",
+              "cssVar": "--opacity-half",
+              "hex": ""
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "disabled",
+              "property": "color",
+              "tokenPath": "Color/Text/Primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "disabled",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Border/Mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            },
+            {
+              "component": "Button",
+              "variant": "secondary",
+              "state": "disabled",
+              "property": "border-color",
+              "tokenPath": "shadow-xs",
+              "cssVar": "shadow-xs",
+              "hex": ""
+            }
+          ]
+        }
+      },
+      "link": {
+        "normal": {
+          "color": [
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "normal",
+              "property": "color",
+              "tokenPath": "Color/Text/Brand",
+              "cssVar": "--color-text-brand",
+              "hex": "#003fd2"
+            }
+          ]
+        },
+        "hover": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "hover",
+              "property": "color",
+              "tokenPath": "Color/Text/Brand",
+              "cssVar": "--color-text-brand",
+              "hex": "#003fd2"
+            }
+          ]
+        },
+        "clicked": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "clicked",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "clicked",
+              "property": "color",
+              "tokenPath": "Color/Text/Brand",
+              "cssVar": "--color-text-brand",
+              "hex": "#003fd2"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "clicked",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Border/Mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            },
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "clicked",
+              "property": "border-color",
+              "tokenPath": "shadow-active-button",
+              "cssVar": "shadow-active-button",
+              "hex": ""
+            }
+          ]
+        },
+        "focus": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "focus",
+              "property": "color",
+              "tokenPath": "Color/Text/Brand",
+              "cssVar": "--color-text-brand",
+              "hex": "#003fd2"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "focus",
+              "property": "border-color",
+              "tokenPath": "shadow-xs",
+              "cssVar": "shadow-xs",
+              "hex": ""
+            },
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "focus",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "disabled": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            },
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Opacity/Half",
+              "cssVar": "--opacity-half",
+              "hex": ""
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "disabled",
+              "property": "color",
+              "tokenPath": "Color/Text/Brand",
+              "cssVar": "--color-text-brand",
+              "hex": "#003fd2"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "disabled",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Border/Mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            },
+            {
+              "component": "Button",
+              "variant": "link",
+              "state": "disabled",
+              "property": "border-color",
+              "tokenPath": "shadow-xs",
+              "cssVar": "shadow-xs",
+              "hex": ""
+            }
+          ]
+        }
+      },
+      "destructive": {
+        "normal": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "normal",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Error/Bold",
+              "cssVar": "--color-fill-semantic-error-bold",
+              "hex": "#cd2629"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "normal",
+              "property": "color",
+              "tokenPath": "Color/Text/Inverse",
+              "cssVar": "--color-text-inverse",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "normal",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Semantic/Error/Bold",
+              "cssVar": "--color-boundary-semantic-error-bold",
+              "hex": "#a62426"
+            }
+          ]
+        },
+        "hover": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Error/Bolder",
+              "cssVar": "--color-fill-semantic-error-bolder",
+              "hex": "#a62426"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "hover",
+              "property": "color",
+              "tokenPath": "Color/Text/Inverse",
+              "cssVar": "--color-text-inverse",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "hover",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Semantic/Error/Bold",
+              "cssVar": "--color-boundary-semantic-error-bold",
+              "hex": "#a62426"
+            }
+          ]
+        },
+        "clicked": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "clicked",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Error/Bold",
+              "cssVar": "--color-fill-semantic-error-bold",
+              "hex": "#cd2629"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "clicked",
+              "property": "color",
+              "tokenPath": "Color/Text/Inverse",
+              "cssVar": "--color-text-inverse",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "clicked",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Semantic/Error/Bold",
+              "cssVar": "--color-boundary-semantic-error-bold",
+              "hex": "#a62426"
+            },
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "clicked",
+              "property": "border-color",
+              "tokenPath": "shadow-active-button",
+              "cssVar": "shadow-active-button",
+              "hex": ""
+            }
+          ]
+        },
+        "focus": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Error/Bold",
+              "cssVar": "--color-fill-semantic-error-bold",
+              "hex": "#cd2629"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "focus",
+              "property": "color",
+              "tokenPath": "Color/Text/Inverse",
+              "cssVar": "--color-text-inverse",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "focus",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "disabled": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Error/Bold",
+              "cssVar": "--color-fill-semantic-error-bold",
+              "hex": "#cd2629"
+            },
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Opacity/Half",
+              "cssVar": "--opacity-half",
+              "hex": ""
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "disabled",
+              "property": "color",
+              "tokenPath": "Color/Text/Inverse",
+              "cssVar": "--color-text-inverse",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "destructive",
+              "state": "disabled",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Semantic/Error/Bold",
+              "cssVar": "--color-boundary-semantic-error-bold",
+              "hex": "#a62426"
+            }
+          ]
+        }
+      },
+      "icon": {
+        "normal": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "normal",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "normal",
+              "property": "background-color",
+              "tokenPath": "Color/Boundary/Border/Mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "normal",
+              "property": "background-color",
+              "tokenPath": "shadow-xs",
+              "cssVar": "shadow-xs",
+              "hex": ""
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "normal",
+              "property": "background-color",
+              "tokenPath": "Color/Icon/Primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "normal",
+              "property": "background-color",
+              "tokenPath": "Color/Icon/Primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            }
+          ]
+        },
+        "hover": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "Color/Boundary/Border/Milder",
+              "cssVar": "--color-boundary-border-milder",
+              "hex": "#dde3e9"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "shadow-sm",
+              "cssVar": "shadow-sm",
+              "hex": ""
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "Color/Icon/Primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "shadow-sm",
+              "cssVar": "shadow-sm",
+              "hex": ""
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "Color/Icon/Primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            }
+          ]
+        },
+        "clicked": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "clicked",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "clicked",
+              "property": "background-color",
+              "tokenPath": "Color/Boundary/Border/Mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "clicked",
+              "property": "background-color",
+              "tokenPath": "shadow-active-button",
+              "cssVar": "shadow-active-button",
+              "hex": ""
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "clicked",
+              "property": "background-color",
+              "tokenPath": "Color/Icon/Primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "clicked",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "clicked",
+              "property": "background-color",
+              "tokenPath": "shadow-active-button",
+              "cssVar": "shadow-active-button",
+              "hex": ""
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "clicked",
+              "property": "background-color",
+              "tokenPath": "Color/Icon/Primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            }
+          ]
+        },
+        "active": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "active",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+              "cssVar": "--color-fill-semantic-info-mildest",
+              "hex": "#def0ff"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "active",
+              "property": "background-color",
+              "tokenPath": "Color/Boundary/Brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "active",
+              "property": "background-color",
+              "tokenPath": "Color/Icon/Selected",
+              "cssVar": "--color-icon-selected",
+              "hex": "#003fd2"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "active",
+              "property": "background-color",
+              "tokenPath": "Color/Boundary/Brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "active",
+              "property": "background-color",
+              "tokenPath": "Color/Icon/Selected",
+              "cssVar": "--color-icon-selected",
+              "hex": "#003fd2"
+            }
+          ]
+        },
+        "focus": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "Color/Boundary/Brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "Color/Icon/Primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "Color/Boundary/Brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "Color/Icon/Primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            }
+          ]
+        },
+        "disabled": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Color/Boundary/Border/Mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "shadow-xs",
+              "cssVar": "shadow-xs",
+              "hex": ""
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Color/Icon/Disabled",
+              "cssVar": "--color-icon-disabled",
+              "hex": "#6f8396"
+            },
+            {
+              "component": "Button",
+              "variant": "icon",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Color/Icon/Disabled",
+              "cssVar": "--color-icon-disabled",
+              "hex": "#6f8396"
+            }
+          ]
+        }
+      },
+      "custom": {
+        "normal": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "normal",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+              "cssVar": "--color-fill-semantic-info-mildest",
+              "hex": "#def0ff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "normal",
+              "property": "color",
+              "tokenPath": "Color/Text/Primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "normal",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Semantic/Info/Mild",
+              "cssVar": "--color-boundary-semantic-info-mild",
+              "hex": "#c1e2ff"
+            }
+          ]
+        },
+        "hover": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+              "cssVar": "--color-fill-semantic-info-mildest",
+              "hex": "#def0ff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "hover",
+              "property": "color",
+              "tokenPath": "Color/Text/Primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "hover",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Semantic/Info/Mild",
+              "cssVar": "--color-boundary-semantic-info-mild",
+              "hex": "#c1e2ff"
+            },
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "hover",
+              "property": "border-color",
+              "tokenPath": "shadow-xs",
+              "cssVar": "shadow-xs",
+              "hex": ""
+            }
+          ]
+        },
+        "clicked": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "clicked",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+              "cssVar": "--color-fill-semantic-info-mildest",
+              "hex": "#def0ff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "clicked",
+              "property": "color",
+              "tokenPath": "Color/Text/Primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "clicked",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Semantic/Info/Mild",
+              "cssVar": "--color-boundary-semantic-info-mild",
+              "hex": "#c1e2ff"
+            },
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "clicked",
+              "property": "border-color",
+              "tokenPath": "shadow-active-button",
+              "cssVar": "shadow-active-button",
+              "hex": ""
+            }
+          ]
+        },
+        "active": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "active",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+              "cssVar": "--color-fill-semantic-info-mildest",
+              "hex": "#def0ff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "active",
+              "property": "color",
+              "tokenPath": "Color/Text/Primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "active",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            },
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "active",
+              "property": "border-color",
+              "tokenPath": "shadow-xs",
+              "cssVar": "shadow-xs",
+              "hex": ""
+            }
+          ]
+        },
+        "focus": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+              "cssVar": "--color-fill-semantic-info-mildest",
+              "hex": "#def0ff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "focus",
+              "property": "color",
+              "tokenPath": "Color/Text/Primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "focus",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "disabled": {
+          "background-color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Semantic/Info/Mildest",
+              "cssVar": "--color-fill-semantic-info-mildest",
+              "hex": "#def0ff"
+            },
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Opacity/Half",
+              "cssVar": "--opacity-half",
+              "hex": ""
+            }
+          ],
+          "color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "disabled",
+              "property": "color",
+              "tokenPath": "Color/Text/Primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "disabled",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Semantic/Info/Mild",
+              "cssVar": "--color-boundary-semantic-info-mild",
+              "hex": "#c1e2ff"
+            },
+            {
+              "component": "Button",
+              "variant": "custom",
+              "state": "disabled",
+              "property": "border-color",
+              "tokenPath": "shadow-xs",
+              "cssVar": "shadow-xs",
+              "hex": ""
+            }
+          ]
+        }
+      },
+      "hyperlink": {
+        "normal": {
+          "color": [
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "normal",
+              "property": "color",
+              "tokenPath": "Color/Text/Semantic/Info",
+              "cssVar": "--color-text-semantic-info",
+              "hex": "#003fd2"
+            },
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "normal",
+              "property": "color",
+              "tokenPath": "Color/Icon/Selected",
+              "cssVar": "--color-icon-selected",
+              "hex": "#003fd2"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "normal",
+              "property": "misc",
+              "tokenPath": "px/Regular",
+              "cssVar": "--px-regular",
+              "hex": ""
+            }
+          ]
+        },
+        "hover": {
+          "color": [
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "hover",
+              "property": "color",
+              "tokenPath": "Color/Text/Semantic/Info",
+              "cssVar": "--color-text-semantic-info",
+              "hex": "#003fd2"
+            },
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "hover",
+              "property": "color",
+              "tokenPath": "Color/Icon/Selected",
+              "cssVar": "--color-icon-selected",
+              "hex": "#003fd2"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "hover",
+              "property": "misc",
+              "tokenPath": "px/Medium",
+              "cssVar": "--px-medium",
+              "hex": ""
+            }
+          ]
+        },
+        "focus": {
+          "color": [
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "focus",
+              "property": "color",
+              "tokenPath": "Color/Text/Semantic/Info",
+              "cssVar": "--color-text-semantic-info",
+              "hex": "#003fd2"
+            },
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "focus",
+              "property": "color",
+              "tokenPath": "Color/Icon/Selected",
+              "cssVar": "--color-icon-selected",
+              "hex": "#003fd2"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "focus",
+              "property": "misc",
+              "tokenPath": "px/Medium",
+              "cssVar": "--px-medium",
+              "hex": ""
+            },
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "focus",
+              "property": "misc",
+              "tokenPath": "Color/Boundary/Brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            },
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "focus",
+              "property": "misc",
+              "tokenPath": "radius/xsmall",
+              "cssVar": "--radius-xsmall",
+              "hex": ""
+            }
+          ]
+        },
+        "disabled": {
+          "color": [
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "disabled",
+              "property": "color",
+              "tokenPath": "Color/Text/Disabled",
+              "cssVar": "--color-text-disabled",
+              "hex": "#6f8396"
+            },
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "disabled",
+              "property": "color",
+              "tokenPath": "Color/Icon/Disabled",
+              "cssVar": "--color-icon-disabled",
+              "hex": "#6f8396"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Button",
+              "variant": "hyperlink",
+              "state": "disabled",
+              "property": "misc",
+              "tokenPath": "px/Regular",
+              "cssVar": "--px-regular",
+              "hex": ""
+            }
+          ]
+        }
+      }
+    },
+    "checkbox": {
+      "unchecked": {
+        "default": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "unchecked",
+              "state": "default",
+              "property": "background-color",
+              "tokenPath": "--color-fill-surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Checkbox",
+              "variant": "unchecked",
+              "state": "default",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-border",
+              "cssVar": "--color-boundary-border",
+              "hex": "#8e9dac"
+            }
+          ]
+        },
+        "hover": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "unchecked",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "--color-fill-surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Checkbox",
+              "variant": "unchecked",
+              "state": "hover",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-border-milder",
+              "cssVar": "--color-boundary-border-milder",
+              "hex": "#dde3e9"
+            }
+          ]
+        },
+        "focus": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "unchecked",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "--color-fill-surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Checkbox",
+              "variant": "unchecked",
+              "state": "focus",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "disabled": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "unchecked",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "--color-fill-base",
+              "cssVar": "--color-fill-base",
+              "hex": "#eceff1"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Checkbox",
+              "variant": "unchecked",
+              "state": "disabled",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-border-mild",
+              "cssVar": "--color-boundary-border-mild",
+              "hex": "#c9d3db"
+            }
+          ]
+        },
+        "error": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "unchecked",
+              "state": "error",
+              "property": "background-color",
+              "tokenPath": "--color-fill-surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Checkbox",
+              "variant": "unchecked",
+              "state": "error",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-semantic-error",
+              "cssVar": "--color-boundary-semantic-error",
+              "hex": "#f33735"
+            }
+          ]
+        }
+      },
+      "checked": {
+        "default": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "default",
+              "property": "background-color",
+              "tokenPath": "--color-fill-brand",
+              "cssVar": "--color-fill-brand",
+              "hex": "#276cf0"
+            }
+          ],
+          "color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "default",
+              "property": "color",
+              "tokenPath": "--color-icon-inverse",
+              "cssVar": "--color-icon-inverse",
+              "hex": "#ffffff"
+            }
+          ]
+        },
+        "hover": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "--color-fill-brand",
+              "cssVar": "--color-fill-brand",
+              "hex": "#276cf0"
+            }
+          ],
+          "color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "hover",
+              "property": "color",
+              "tokenPath": "--color-icon-inverse",
+              "cssVar": "--color-icon-inverse",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "hover",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-border-milder",
+              "cssVar": "--color-boundary-border-milder",
+              "hex": "#dde3e9"
+            }
+          ]
+        },
+        "focus": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "--color-fill-brand",
+              "cssVar": "--color-fill-brand",
+              "hex": "#276cf0"
+            }
+          ],
+          "color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "focus",
+              "property": "color",
+              "tokenPath": "--color-icon-inverse",
+              "cssVar": "--color-icon-inverse",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "focus",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "disabled": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "--color-fill-base",
+              "cssVar": "--color-fill-base",
+              "hex": "#eceff1"
+            }
+          ],
+          "color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "disabled",
+              "property": "color",
+              "tokenPath": "--color-icon-disabled",
+              "cssVar": "--color-icon-disabled",
+              "hex": "#6f8396"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "disabled",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-border-mild",
+              "cssVar": "--color-boundary-border-mild",
+              "hex": "#c9d3db"
+            }
+          ]
+        },
+        "error": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "error",
+              "property": "background-color",
+              "tokenPath": "--color-fill-semantic-error",
+              "cssVar": "--color-fill-semantic-error",
+              "hex": "#f33735"
+            }
+          ],
+          "color": [
+            {
+              "component": "Checkbox",
+              "variant": "checked",
+              "state": "error",
+              "property": "color",
+              "tokenPath": "--color-icon-inverse",
+              "cssVar": "--color-icon-inverse",
+              "hex": "#ffffff"
+            }
+          ]
+        }
+      },
+      "indeterminate": {
+        "default": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "default",
+              "property": "background-color",
+              "tokenPath": "--color-fill-neutral",
+              "cssVar": "--color-fill-neutral",
+              "hex": "#1b3e59"
+            }
+          ],
+          "color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "default",
+              "property": "color",
+              "tokenPath": "--color-icon-inverse",
+              "cssVar": "--color-icon-inverse",
+              "hex": "#ffffff"
+            }
+          ]
+        },
+        "hover": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "--color-fill-neutral",
+              "cssVar": "--color-fill-neutral",
+              "hex": "#1b3e59"
+            }
+          ],
+          "color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "hover",
+              "property": "color",
+              "tokenPath": "--color-icon-inverse",
+              "cssVar": "--color-icon-inverse",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "hover",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-border-milder",
+              "cssVar": "--color-boundary-border-milder",
+              "hex": "#dde3e9"
+            }
+          ]
+        },
+        "focus": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "--color-fill-neutral",
+              "cssVar": "--color-fill-neutral",
+              "hex": "#1b3e59"
+            }
+          ],
+          "color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "focus",
+              "property": "color",
+              "tokenPath": "--color-icon-inverse",
+              "cssVar": "--color-icon-inverse",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "focus",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "disabled": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "--color-fill-base",
+              "cssVar": "--color-fill-base",
+              "hex": "#eceff1"
+            }
+          ],
+          "color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "disabled",
+              "property": "color",
+              "tokenPath": "--color-icon-disabled",
+              "cssVar": "--color-icon-disabled",
+              "hex": "#6f8396"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "disabled",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-border-mild",
+              "cssVar": "--color-boundary-border-mild",
+              "hex": "#c9d3db"
+            }
+          ]
+        },
+        "error": {
+          "background-color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "error",
+              "property": "background-color",
+              "tokenPath": "--color-fill-semantic-error",
+              "cssVar": "--color-fill-semantic-error",
+              "hex": "#f33735"
+            }
+          ],
+          "color": [
+            {
+              "component": "Checkbox",
+              "variant": "indeterminate",
+              "state": "error",
+              "property": "color",
+              "tokenPath": "--color-icon-inverse",
+              "cssVar": "--color-icon-inverse",
+              "hex": "#ffffff"
+            }
+          ]
+        }
+      }
+    },
+    "chips": {
+      "default": {
+        "**normal**": {
+          "background-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**normal**",
+              "property": "background-color",
+              "tokenPath": "--color-fill-container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            }
+          ],
+          "color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**normal**",
+              "property": "color",
+              "tokenPath": "--color-text-primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ]
+        },
+        "**normal hover**": {
+          "background-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**normal hover**",
+              "property": "background-color",
+              "tokenPath": "--color-fill-container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            }
+          ],
+          "color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**normal hover**",
+              "property": "color",
+              "tokenPath": "--color-text-primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**normal hover**",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-border-milder",
+              "cssVar": "--color-boundary-border-milder",
+              "hex": "#dde3e9"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**normal hover**",
+              "property": "misc",
+              "tokenPath": "--color-boundary-border-milder",
+              "cssVar": "--color-boundary-border-milder",
+              "hex": "#dde3e9"
+            }
+          ]
+        },
+        "**focus**": {
+          "background-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**focus**",
+              "property": "background-color",
+              "tokenPath": "--color-fill-container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            }
+          ],
+          "color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**focus**",
+              "property": "color",
+              "tokenPath": "--color-text-primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**focus**",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**focus**",
+              "property": "misc",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "**selected**": {
+          "background-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**selected**",
+              "property": "background-color",
+              "tokenPath": "--color-fill-container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            }
+          ],
+          "color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**selected**",
+              "property": "color",
+              "tokenPath": "--color-text-primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**selected**",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**selected**",
+              "property": "misc",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**selected**",
+              "property": "misc",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**selected**",
+              "property": "misc",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "**error**": {
+          "background-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error**",
+              "property": "background-color",
+              "tokenPath": "--color-fill-semantic-error-mildest",
+              "cssVar": "--color-fill-semantic-error-mildest",
+              "hex": "#ffe9ee"
+            }
+          ],
+          "color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error**",
+              "property": "color",
+              "tokenPath": "--color-text-primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error**",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-semantic-error-bold",
+              "cssVar": "--color-boundary-semantic-error-bold",
+              "hex": "#a62426"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error**",
+              "property": "misc",
+              "tokenPath": "--color-fill-semantic-error-mildest",
+              "cssVar": "--color-fill-semantic-error-mildest",
+              "hex": "#ffe9ee"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error**",
+              "property": "misc",
+              "tokenPath": "--color-boundary-semantic-error-bold",
+              "cssVar": "--color-boundary-semantic-error-bold",
+              "hex": "#a62426"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error**",
+              "property": "misc",
+              "tokenPath": "--color-fill-semantic-error-mildest",
+              "cssVar": "--color-fill-semantic-error-mildest",
+              "hex": "#ffe9ee"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error**",
+              "property": "misc",
+              "tokenPath": "--color-boundary-semantic-error-bold",
+              "cssVar": "--color-boundary-semantic-error-bold",
+              "hex": "#a62426"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error**",
+              "property": "misc",
+              "tokenPath": "--color-fill-semantic-error-mildest",
+              "cssVar": "--color-fill-semantic-error-mildest",
+              "hex": "#ffe9ee"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error**",
+              "property": "misc",
+              "tokenPath": "--color-boundary-semantic-error-bold",
+              "cssVar": "--color-boundary-semantic-error-bold",
+              "hex": "#a62426"
+            }
+          ]
+        },
+        "**error hover**": {
+          "background-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error hover**",
+              "property": "background-color",
+              "tokenPath": "--color-fill-semantic-error-mildest",
+              "cssVar": "--color-fill-semantic-error-mildest",
+              "hex": "#ffe9ee"
+            }
+          ],
+          "color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error hover**",
+              "property": "color",
+              "tokenPath": "--color-text-primary",
+              "cssVar": "--color-text-primary",
+              "hex": "#12334c"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error hover**",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-semantic-error-bold",
+              "cssVar": "--color-boundary-semantic-error-bold",
+              "hex": "#a62426"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error hover**",
+              "property": "misc",
+              "tokenPath": "--color-boundary-semantic-error-bold",
+              "cssVar": "--color-boundary-semantic-error-bold",
+              "hex": "#a62426"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error hover**",
+              "property": "misc",
+              "tokenPath": "--color-boundary-semantic-error-bold",
+              "cssVar": "--color-boundary-semantic-error-bold",
+              "hex": "#a62426"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**error hover**",
+              "property": "misc",
+              "tokenPath": "--color-boundary-semantic-error-bold",
+              "cssVar": "--color-boundary-semantic-error-bold",
+              "hex": "#a62426"
+            }
+          ]
+        },
+        "**disabled**": {
+          "background-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**disabled**",
+              "property": "background-color",
+              "tokenPath": "--color-fill-base",
+              "cssVar": "--color-fill-base",
+              "hex": "#eceff1"
+            }
+          ],
+          "color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**disabled**",
+              "property": "color",
+              "tokenPath": "--color-text-disabled",
+              "cssVar": "--color-text-disabled",
+              "hex": "#6f8396"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**disabled**",
+              "property": "misc",
+              "tokenPath": "--color-fill-base",
+              "cssVar": "--color-fill-base",
+              "hex": "#eceff1"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**disabled**",
+              "property": "misc",
+              "tokenPath": "--color-text-disabled",
+              "cssVar": "--color-text-disabled",
+              "hex": "#6f8396"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**disabled**",
+              "property": "misc",
+              "tokenPath": "--color-fill-base",
+              "cssVar": "--color-fill-base",
+              "hex": "#eceff1"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**disabled**",
+              "property": "misc",
+              "tokenPath": "--color-text-disabled",
+              "cssVar": "--color-text-disabled",
+              "hex": "#6f8396"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**disabled**",
+              "property": "misc",
+              "tokenPath": "--color-fill-base",
+              "cssVar": "--color-fill-base",
+              "hex": "#eceff1"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**disabled**",
+              "property": "misc",
+              "tokenPath": "--color-text-disabled",
+              "cssVar": "--color-text-disabled",
+              "hex": "#6f8396"
+            }
+          ]
+        },
+        "default": {
+          "color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "default",
+              "property": "color",
+              "tokenPath": "--color-icon-primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "default",
+              "property": "misc",
+              "tokenPath": "--color-fill-container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "default",
+              "property": "misc",
+              "tokenPath": "--color-fill-container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            }
+          ]
+        },
+        "**hover**": {
+          "color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**hover**",
+              "property": "color",
+              "tokenPath": "--color-icon-primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            }
+          ],
+          "background-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "**hover**",
+              "property": "background-color",
+              "tokenPath": "--color-overlay-neutral",
+              "cssVar": "--color-overlay-neutral",
+              "hex": "#abb8c4"
+            }
+          ]
+        },
+        "focus": {
+          "color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "focus",
+              "property": "color",
+              "tokenPath": "--color-icon-primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            }
+          ],
+          "background-color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "disabled": {
+          "color": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "disabled",
+              "property": "color",
+              "tokenPath": "--color-icon-disabled",
+              "cssVar": "--color-icon-disabled",
+              "hex": "#6f8396"
+            }
+          ]
+        },
+        "normal": {
+          "misc": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "normal",
+              "property": "misc",
+              "tokenPath": "--color-fill-container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            }
+          ]
+        },
+        "hover": {
+          "misc": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "hover",
+              "property": "misc",
+              "tokenPath": "--color-boundary-border-milder",
+              "cssVar": "--color-boundary-border-milder",
+              "hex": "#dde3e9"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "hover",
+              "property": "misc",
+              "tokenPath": "--color-boundary-border-milder",
+              "cssVar": "--color-boundary-border-milder",
+              "hex": "#dde3e9"
+            }
+          ]
+        },
+        "focus-visible": {
+          "misc": [
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "focus-visible",
+              "property": "misc",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            },
+            {
+              "component": "Chips",
+              "variant": "default",
+              "state": "focus-visible",
+              "property": "misc",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        }
+      }
+    },
+    "inlinemessage": {
+      "link": {
+        "default": {
+          "misc": [
+            {
+              "component": "InlineMessage",
+              "variant": "link",
+              "state": "default",
+              "property": "misc",
+              "tokenPath": "--color-text-brand",
+              "cssVar": "--color-text-brand",
+              "hex": "#003fd2"
+            }
+          ]
+        },
+        "hover": {
+          "misc": [
+            {
+              "component": "InlineMessage",
+              "variant": "link",
+              "state": "hover",
+              "property": "misc",
+              "tokenPath": "--color-text-brand",
+              "cssVar": "--color-text-brand",
+              "hex": "#003fd2"
+            }
+          ]
+        },
+        "active": {
+          "misc": [
+            {
+              "component": "InlineMessage",
+              "variant": "link",
+              "state": "active",
+              "property": "misc",
+              "tokenPath": "--color-text-brand",
+              "cssVar": "--color-text-brand",
+              "hex": "#003fd2"
+            }
+          ]
+        },
+        "focus": {
+          "misc": [
+            {
+              "component": "InlineMessage",
+              "variant": "link",
+              "state": "focus",
+              "property": "misc",
+              "tokenPath": "--color-focus-ring",
+              "cssVar": "--color-focus-ring",
+              "hex": ""
+            }
+          ]
+        }
+      }
+    },
+    "search": {
+      "default": {
+        "default": {
+          "border-color": [
+            {
+              "component": "Search",
+              "variant": "default",
+              "state": "default",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Border/Milder",
+              "cssVar": "--color-boundary-border-milder",
+              "hex": "#dde3e9"
+            }
+          ],
+          "background-color": [
+            {
+              "component": "Search",
+              "variant": "default",
+              "state": "default",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Search",
+              "variant": "default",
+              "state": "default",
+              "property": "color",
+              "tokenPath": "Color/Icon/Disabled",
+              "cssVar": "--color-icon-disabled",
+              "hex": "#6f8396"
+            }
+          ]
+        },
+        "hover": {
+          "border-color": [
+            {
+              "component": "Search",
+              "variant": "default",
+              "state": "hover",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Border",
+              "cssVar": "--color-boundary-border",
+              "hex": "#8e9dac"
+            }
+          ],
+          "background-color": [
+            {
+              "component": "Search",
+              "variant": "default",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Search",
+              "variant": "default",
+              "state": "hover",
+              "property": "color",
+              "tokenPath": "Color/Icon/Disabled",
+              "cssVar": "--color-icon-disabled",
+              "hex": "#6f8396"
+            }
+          ]
+        },
+        "active": {
+          "border-color": [
+            {
+              "component": "Search",
+              "variant": "default",
+              "state": "active",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ],
+          "background-color": [
+            {
+              "component": "Search",
+              "variant": "default",
+              "state": "active",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "color": [
+            {
+              "component": "Search",
+              "variant": "default",
+              "state": "active",
+              "property": "color",
+              "tokenPath": "Color/Icon/Primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            }
+          ]
+        },
+        "disabled": {
+          "border-color": [
+            {
+              "component": "Search",
+              "variant": "default",
+              "state": "disabled",
+              "property": "border-color",
+              "tokenPath": "Color/Boundary/Border/Mild",
+              "cssVar": "--color-boundary-border-mild",
+              "hex": "#c9d3db"
+            }
+          ],
+          "background-color": [
+            {
+              "component": "Search",
+              "variant": "default",
+              "state": "disabled",
+              "property": "background-color",
+              "tokenPath": "Color/Fill/Container",
+              "cssVar": "--color-fill-container",
+              "hex": "#f6f7f8"
+            }
+          ],
+          "color": [
+            {
+              "component": "Search",
+              "variant": "default",
+              "state": "disabled",
+              "property": "color",
+              "tokenPath": "Color/Icon/Disabled",
+              "cssVar": "--color-icon-disabled",
+              "hex": "#6f8396"
+            }
+          ]
+        }
+      }
+    },
+    "table": {
+      "default": {
+        "default": {
+          "background-color": [
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "default",
+              "property": "background-color",
+              "tokenPath": "--color-fill-surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "default",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-border-mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "default",
+              "property": "misc",
+              "tokenPath": "--color-fill-surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            },
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "default",
+              "property": "misc",
+              "tokenPath": "--color-fill-surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ]
+        },
+        "hover": {
+          "background-color": [
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "--color-fill-surface",
+              "cssVar": "--color-fill-surface",
+              "hex": "#ffffff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "hover",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-border-mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "hover",
+              "property": "misc",
+              "tokenPath": "--color-overlay-neutral",
+              "cssVar": "--color-overlay-neutral",
+              "hex": "#abb8c4"
+            },
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "hover",
+              "property": "misc",
+              "tokenPath": "--color-overlay-neutral",
+              "cssVar": "--color-overlay-neutral",
+              "hex": "#abb8c4"
+            }
+          ]
+        },
+        "selected": {
+          "background-color": [
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "selected",
+              "property": "background-color",
+              "tokenPath": "--color-overlay-semantic-info-light",
+              "cssVar": "--color-overlay-semantic-info-light",
+              "hex": "#a5d2ff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "selected",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-border-mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "selected",
+              "property": "misc",
+              "tokenPath": "--color-overlay-semantic-info-light",
+              "cssVar": "--color-overlay-semantic-info-light",
+              "hex": "#a5d2ff"
+            },
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "selected",
+              "property": "misc",
+              "tokenPath": "--color-overlay-semantic-info-light",
+              "cssVar": "--color-overlay-semantic-info-light",
+              "hex": "#a5d2ff"
+            }
+          ]
+        },
+        "clicked/focused": {
+          "background-color": [
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "clicked/focused",
+              "property": "background-color",
+              "tokenPath": "--color-overlay-semantic-info-light",
+              "cssVar": "--color-overlay-semantic-info-light",
+              "hex": "#a5d2ff"
+            }
+          ],
+          "border-color": [
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "clicked/focused",
+              "property": "border-color",
+              "tokenPath": "--color-boundary-border-mildest",
+              "cssVar": "--color-boundary-border-mildest",
+              "hex": "#eaeef2"
+            }
+          ],
+          "misc": [
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "clicked/focused",
+              "property": "misc",
+              "tokenPath": "clicked/active",
+              "cssVar": "--clicked-active",
+              "hex": ""
+            },
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "clicked/focused",
+              "property": "misc",
+              "tokenPath": "--color-overlay-semantic-info-light",
+              "cssVar": "--color-overlay-semantic-info-light",
+              "hex": "#a5d2ff"
+            },
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "clicked/focused",
+              "property": "misc",
+              "tokenPath": "clicked/active",
+              "cssVar": "--clicked-active",
+              "hex": ""
+            },
+            {
+              "component": "Table",
+              "variant": "default",
+              "state": "clicked/focused",
+              "property": "misc",
+              "tokenPath": "--color-overlay-semantic-info-light",
+              "cssVar": "--color-overlay-semantic-info-light",
+              "hex": "#a5d2ff"
+            }
+          ]
+        }
+      }
+    },
+    "tag": {
+      "default": {
+        "default": {
+          "color": [
+            {
+              "component": "Tag",
+              "variant": "default",
+              "state": "default",
+              "property": "color",
+              "tokenPath": "--color-icon-primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            }
+          ]
+        },
+        "hover": {
+          "color": [
+            {
+              "component": "Tag",
+              "variant": "default",
+              "state": "hover",
+              "property": "color",
+              "tokenPath": "--color-icon-primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            }
+          ],
+          "background-color": [
+            {
+              "component": "Tag",
+              "variant": "default",
+              "state": "hover",
+              "property": "background-color",
+              "tokenPath": "--color-overlay-neutral",
+              "cssVar": "--color-overlay-neutral",
+              "hex": "#abb8c4"
+            }
+          ]
+        },
+        "focus": {
+          "color": [
+            {
+              "component": "Tag",
+              "variant": "default",
+              "state": "focus",
+              "property": "color",
+              "tokenPath": "--color-icon-primary",
+              "cssVar": "--color-icon-primary",
+              "hex": "#2b3640"
+            }
+          ],
+          "background-color": [
+            {
+              "component": "Tag",
+              "variant": "default",
+              "state": "focus",
+              "property": "background-color",
+              "tokenPath": "--color-boundary-brand",
+              "cssVar": "--color-boundary-brand",
+              "hex": "#276cf0"
+            }
+          ]
+        },
+        "disabled": {
+          "color": [
+            {
+              "component": "Tag",
+              "variant": "default",
+              "state": "disabled",
+              "property": "color",
+              "tokenPath": "--color-icon-disabled",
+              "cssVar": "--color-icon-disabled",
+              "hex": "#6f8396"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "meta": {
+    "componentCount": 9,
+    "totalRules": 281,
+    "generatedAt": "2026-04-15T17:07:59.102Z"
+  }
+}

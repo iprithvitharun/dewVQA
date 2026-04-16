@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building Dew VQA — When We Stopped Matching Elements and Let AI See</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f7;
+    --bg-alt: #f2f0ec;
+    --bg-code: #1c1917;
+    --text: #1c1917;
+    --text-secondary: #57534e;
+    --text-tertiary: #a8a29e;
+    --accent: #b45309;
+    --accent-soft: #fef3c7;
+    --border: #e7e5e4;
+    --border-strong: #d6d3d1;
+    --pullquote-bar: #b45309;
+    --code-text: #e7e5e4;
+    --code-keyword: #f59e0b;
+    --code-string: #86efac;
+    --code-comment: #78716c;
+    --code-fn: #93c5fd;
+    --code-prop: #c4b5fd;
+    --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+    --content-width: 680px;
+    --toc-width: 220px;
+  }
+
+  [data-theme="dark"] {
+    --bg: #1c1917;
+    --bg-alt: #292524;
+    --bg-code: #0c0a09;
+    --text: #e7e5e4;
+    --text-secondary: #a8a29e;
+    --text-tertiary: #78716c;
+    --accent: #f59e0b;
+    --accent-soft: #451a03;
+    --border: #44403c;
+    --border-strong: #57534e;
+    --pullquote-bar: #f59e0b;
+    --code-text: #e7e5e4;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+
+  body {
+    font-family: var(--serif);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  /* ── Theme Toggle ── */
+  .theme-toggle {
+    position: fixed; top: 20px; right: 24px; z-index: 100;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--bg-alt); border: 1px solid var(--border);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; transition: all 0.2s;
+  }
+  .theme-toggle:hover { border-color: var(--border-strong); transform: scale(1.05); }
+
+  /* ── Layout ── */
+  .page { display: flex; max-width: 1100px; margin: 0 auto; padding: 0 24px; gap: 64px; }
+
+  .toc-rail {
+    position: sticky; top: 32px; align-self: flex-start;
+    width: var(--toc-width); flex-shrink: 0;
+    padding-top: 120px;
+    display: none;
+  }
+  @media (min-width: 1024px) { .toc-rail { display: block; } }
+
+  .toc-rail h4 {
+    font-family: var(--sans); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-tertiary); margin-bottom: 16px;
+  }
+  .toc-rail a {
+    display: block; font-family: var(--sans); font-size: 13px;
+    color: var(--text-tertiary); text-decoration: none;
+    padding: 5px 0 5px 12px;
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    line-height: 1.4;
+  }
+  .toc-rail a:hover, .toc-rail a.active {
+    color: var(--text); border-left-color: var(--accent);
+  }
+
+  .content { flex: 1; min-width: 0; max-width: var(--content-width); padding: 80px 0 120px; }
+  @media (min-width: 1024px) { .content { margin-left: auto; } }
+
+  /* ── Header ── */
+  .post-meta {
+    font-family: var(--sans); font-size: 13px;
+    color: var(--text-tertiary); margin-bottom: 12px;
+    display: flex; gap: 16px; align-items: center;
+  }
+  .post-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-tertiary); }
+
+  h1.post-title {
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: 700; line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .post-subtitle {
+    font-size: 20px; font-weight: 300;
+    color: var(--text-secondary); line-height: 1.5;
+    margin-bottom: 40px;
+  }
+
+  .post-authors {
+    display: flex; gap: 24px; padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 56px;
+    font-family: var(--sans); font-size: 14px;
+  }
+  .author-name { font-weight: 600; color: var(--text); }
+  .author-role { color: var(--text-tertiary); }
+
+  /* ── Typography ── */
+  h2 {
+    font-size: clamp(24px, 3.5vw, 30px);
+    font-weight: 700; line-height: 1.25;
+    letter-spacing: -0.015em;
+    margin-top: 72px; margin-bottom: 24px;
+    padding-top: 24px;
+  }
+
+  h3 {
+    font-size: 20px; font-weight: 600;
+    line-height: 1.35; margin-top: 40px; margin-bottom: 16px;
+  }
+
+  p { margin-bottom: 24px; }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+
+  strong { font-weight: 600; }
+
+  /* ── Lists ── */
+  ul, ol { margin-bottom: 24px; padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--text-tertiary); }
+
+  /* ── Code ── */
+  code {
+    font-family: var(--mono); font-size: 0.85em;
+    background: var(--bg-alt); padding: 2px 6px;
+    border-radius: 4px; font-weight: 400;
+  }
+
+  pre {
+    background: var(--bg-code); color: var(--code-text);
+    padding: 24px; border-radius: 8px;
+    overflow-x: auto; margin-bottom: 32px;
+    font-size: 14px; line-height: 1.65;
+    border: 1px solid var(--border);
+  }
+  pre code {
+    background: none; padding: 0; border-radius: 0;
+    font-size: inherit;
+  }
+  .kw { color: var(--code-keyword); }
+  .str { color: var(--code-string); }
+  .cm { color: var(--code-comment); font-style: italic; }
+  .fn { color: var(--code-fn); }
+  .prop { color: var(--code-prop); }
+
+  /* ── Pullquote ── */
+  .pullquote {
+    border-left: 3px solid var(--pullquote-bar);
+    padding: 4px 0 4px 24px;
+    margin: 40px 0;
+    font-size: 20px; font-weight: 400;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  /* ── Diagram ── */
+  .diagram {
+    background: var(--bg-alt); border: 1px solid var(--border);
+    border-radius: 8px; padding: 24px;
+    margin: 32px 0; overflow-x: auto;
+    font-family: var(--mono); font-size: 13px;
+    line-height: 1.5; white-space: pre;
+    color: var(--text-secondary);
+  }
+
+  /* ── Section Divider ── */
+  .divider {
+    margin: 64px 0; text-align: center;
+    color: var(--text-tertiary); font-size: 18px;
+    letter-spacing: 12px;
+  }
+
+  /* ── Stats ── */
+  .stat-row {
+    display: flex; gap: 32px; margin: 32px 0;
+    flex-wrap: wrap;
+  }
+  .stat {
+    flex: 1; min-width: 140px;
+    padding: 20px; border-radius: 8px;
+    background: var(--bg-alt); border: 1px solid var(--border);
+  }
+  .stat-value {
+    font-family: var(--sans); font-size: 28px;
+    font-weight: 700; color: var(--accent); line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-family: var(--sans); font-size: 12px;
+    color: var(--text-tertiary); text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── Chapter Label ── */
+  .chapter-label {
+    font-family: var(--sans); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px;
+  }
+
+  /* ── Table ── */
+  table {
+    width: 100%; border-collapse: collapse; margin: 24px 0 32px;
+    font-size: 15px;
+  }
+  th, td {
+    text-align: left; padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--sans);
+  }
+  th { font-size: 12px; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.04em; }
+  td code { font-size: 12px; }
+
+  /* ── Footnote ── */
+  .footnote {
+    font-family: var(--sans); font-size: 13px;
+    color: var(--text-tertiary); line-height: 1.6;
+    margin-top: 64px; padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    body { font-size: 17px; }
+    .content { padding: 48px 0 80px; }
+    pre { font-size: 13px; padding: 16px; }
+    .stat-row { gap: 12px; }
+    h2 { margin-top: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" id="themeBtn">
+  <span id="themeIcon"></span>
+</button>
+
+<div class="page">
+
+<nav class="toc-rail" id="toc">
+  <h4>Contents</h4>
+  <a href="#the-problem">The Problem</a>
+  <a href="#token-scan">Token Scan</a>
+  <a href="#figma-comparison">Figma Comparison</a>
+  <a href="#fighting-noise">Fighting the Noise</a>
+  <a href="#content-comparison">Content Comparison</a>
+  <a href="#the-ai-pivot">The AI Pivot</a>
+  <a href="#what-we-landed-on">What We Landed On</a>
+</nav>
+
+<article class="content">
+
+<!-- Header -->
+<div class="post-meta">
+  <span>Prithvi Tharun</span>
+  <span class="dot"></span>
+  <span>April 2025</span>
+  <span class="dot"></span>
+  <span>18 min read</span>
+</div>
+
+<h1 class="post-title">Building Dew VQA: When We Stopped Matching Elements and Let AI See</h1>
+
+<p class="post-subtitle">
+  A Chrome extension for automated visual QA testing. What we built, what broke, and why we ended up sending screenshots to Claude instead of writing a matching algorithm.
+</p>
+
+<div class="post-authors">
+  <div>
+    <div class="author-name">Prithvi Tharun</div>
+    <div class="author-role">UX Engineer</div>
+  </div>
+  <div>
+    <div class="author-name">Mamtha</div>
+    <div class="author-role">QA Lead &mdash; originated the idea</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- Chapter 1 -->
+<!-- ════════════════════════════════════════════ -->
+
+<div class="chapter-label" id="the-problem">Chapter 1</div>
+<h2>The Problem</h2>
+
+<p>
+  Visual QA testing at Freshworks is largely manual. A designer opens Figma on one side, the dev build on the other, and compares them pixel by pixel. Is the heading 24px or 28px? Is that border color <code>#eaeef2</code> or <code>#e0e0e0</code>? Is the button text "Sign In" or "Sign in"?
+</p>
+
+<p>
+  This takes hours, catches maybe 60% of issues, and nobody enjoys doing it.
+</p>
+
+<p>
+  Mamtha, our QA lead, had the first insight: <em>what if we could automate this?</em> Not pixel-perfect screenshot diffing (tools exist for that, and they're noisy), but something smarter &mdash; something that understands design systems and can tell you <em>why</em> something is wrong, not just <em>that</em> it's different.
+</p>
+
+<p>
+  The scope felt tractable: check capitalization, verify spacing values, compare colors against our <strong>Dew Design System</strong> &mdash; Freshworks' component library with defined tokens for everything from <code>--color-text-primary</code> to <code>--spacing-400</code>.
+</p>
+
+<p>We decided to build a Chrome extension.</p>
+
+<div class="divider">&middot; &middot; &middot;</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- Chapter 2 -->
+<!-- ════════════════════════════════════════════ -->
+
+<div class="chapter-label" id="token-scan">Chapter 2</div>
+<h2>Token Scan &mdash; The First Approach</h2>
+
+<p>
+  The initial idea was simple: scan a webpage and check if every CSS value matches a valid Dew token. No Figma required &mdash; just system compliance.
+</p>
+
+<h3>How it works</h3>
+
+<p>
+  At build time, we compile all Dew Design System SCSS files into a JSON database:
+</p>
+
+<div class="stat-row">
+  <div class="stat">
+    <div class="stat-value">103</div>
+    <div class="stat-label">Palette colors</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">114</div>
+    <div class="stat-label">Semantic tokens</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">18</div>
+    <div class="stat-label">Spacing values</div>
+  </div>
+</div>
+
+<p>
+  The token database includes forward lookups (token &rarr; hex) and <strong>reverse lookups</strong> (hex &rarr; token name), so given any color on the page, we can tell you which Dew token it should be.
+</p>
+
+<p>At runtime, a content script walks the DOM via <code>TreeWalker</code>, extracts every element's computed styles, and the comparison engine checks each value:</p>
+
+<div class="diagram">User clicks "Scan Page"
+       &darr;
+Side Panel &xrarr; Service Worker &xrarr; Content Script
+                                          &darr;
+                                    getComputedStyle()
+                                    on every visible element
+                                          &darr;
+                                    ExtractedElement[]
+                                          &darr;
+Service Worker runs comparison-engine.ts
+       &darr;
+  For each color: hex &isin; token database?
+  For each spacing: value &isin; [0,2,4,6,8,12,16,20,24,32...]?
+  For each font: family = Inter? size &isin; type scale?
+       &darr;
+  VqaReport with violations</div>
+
+<h3>The 652-violation problem</h3>
+
+<p>
+  We ran it on a Freshdesk page. <strong>652 violations across 311 elements.</strong>
+</p>
+
+<p>
+  Most were noise. The page wasn't built with Dew components yet, so every color was flagged as "not a Dew token." The violations said things like <em>"This color does not match any Dew token"</em> &mdash; technically true, utterly useless.
+</p>
+
+<p>We made three improvements:</p>
+
+<ol>
+  <li><strong>Human-readable element descriptions.</strong> Instead of a raw CSS selector, show "Button with 'Export' label in top-right area." We extract the tag name, text content, ARIA labels, and screen position to build plain-language descriptions.</li>
+  <li><strong>Component-aware suggestions.</strong> For Dew components (elements with <code>data-dew</code>), we look up the expected token from the component spec: "Secondary Button border-color should be <code>--color-boundary-border-mildest</code> (#eaeef2)."</li>
+  <li><strong>Closest token suggestions.</strong> For non-Dew elements, find the nearest matching token by RGB distance, filtered by property type: <code>border-color: #c4cdd6</code> &rarr; "Not a Dew component. Closest match: <code>--color-boundary-border-mild</code> (#c9d3db)."</li>
+</ol>
+
+<p>
+  Token Scan works well for what it does &mdash; checking design system compliance. But it can't tell you whether the implementation matches the <em>design</em>. For that, we needed Figma.
+</p>
+
+<div class="divider">&middot; &middot; &middot;</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- Chapter 3 -->
+<!-- ════════════════════════════════════════════ -->
+
+<div class="chapter-label" id="figma-comparison">Chapter 3</div>
+<h2>Figma Frame Comparison &mdash; The Big Pivot</h2>
+
+<p>
+  Sivachidambaram suggested the idea that changed everything: <em>compare the page directly against a specific Figma frame.</em> Not just "is this a valid token?" but "does this match the design?"
+</p>
+
+<p>The user flow:</p>
+
+<ol>
+  <li>Paste a Figma frame URL (<code>figma.com/design/...?node-id=456-789</code>)</li>
+  <li>Enter a Figma Personal Access Token (stored locally, one-time)</li>
+  <li>Click "Compare with Figma"</li>
+</ol>
+
+<p>Behind the scenes:</p>
+
+<div class="diagram">Figma REST API                     Content Script (DOM)
+     &darr;                                    &darr;
+  parseFigmaUrl()                    getComputedStyle()
+  fetchFigmaNodes()                  on every visible element
+  flattenFigmaTree()
+     &darr;                                    &darr;
+NormalizedFigmaProps[]           ExtractedElement[]
+     &darr;                                    &darr;
+     &boxdr;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&boxdl;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&horbar;&boxur;
+              &darr;
+      matchFigmaToDom()
+         3-pass matching
+              &darr;
+      comparePairByPair()
+              &darr;
+      FigmaComparisonReport</div>
+
+<h3>The matching algorithm</h3>
+
+<p>
+  Figma has a tree of design nodes. The DOM has a tree of HTML elements. They look nothing alike. We needed to figure out which Figma node corresponds to which DOM element.
+</p>
+
+<p>We built a three-pass waterfall:</p>
+
+<table>
+  <tr><th>Pass</th><th>Strategy</th><th>Confidence</th></tr>
+  <tr><td>1</td><td>Text content &mdash; match Figma TEXT nodes to DOM elements with same text</td><td>1.0</td></tr>
+  <tr><td>2</td><td>Component name &mdash; match Figma "Button" to DOM <code>&lt;button&gt;</code></td><td>0.75</td></tr>
+  <tr><td>3</td><td>Position &mdash; normalize coordinates to [0,1], compute bounding box IoU</td><td>0.3&ndash;0.9</td></tr>
+</table>
+
+<p>
+  For matched pairs, we compared properties one by one: fill color, text color, font size, font weight, border radius, padding, gap.
+</p>
+
+<p><strong>Result: 283 discrepancies.</strong> Most were wrong.</p>
+
+<div class="pullquote">
+  The matching algorithm wasn't finding the right pairs. A Figma frame would match a random DOM div, and then every property comparison was meaningless.
+</div>
+
+<div class="divider">&middot; &middot; &middot;</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- Chapter 4 -->
+<!-- ════════════════════════════════════════════ -->
+
+<div class="chapter-label" id="fighting-noise">Chapter 4</div>
+<h2>Fighting the Noise</h2>
+
+<p>
+  We did a root cause analysis of every false positive. Five problems accounted for ~95% of the noise:
+</p>
+
+<table>
+  <tr><th>Cause</th><th>Impact</th><th>Fix</th></tr>
+  <tr><td>IoU threshold too low (0.3)</td><td>~40%</td><td>Raised to 0.5 + size similarity check</td></tr>
+  <tr><td>Inherited CSS values</td><td>~20%</td><td>Detect inherited backgrounds, skip comparison</td></tr>
+  <tr><td>Wrapper frames matching leaves</td><td>~15%</td><td>Filter FRAMEs with no visual properties</td></tr>
+  <tr><td>Structural nodes generating comparisons</td><td>~10%</td><td>Skip nodes with no fill/stroke/typography</td></tr>
+  <tr><td>Browser default styles</td><td>~5%</td><td>Skip border/font comparisons when Figma has no value</td></tr>
+</table>
+
+<p>
+  The inherited background issue was particularly insidious. <code>getComputedStyle()</code> returns <code>#ffffff</code> for every element whose parent has a white background &mdash; even if the element itself has no background set. A Figma FRAME with no fill would mismatch against every DOM element's inherited white.
+</p>
+
+<p>The fix was a heuristic: if the element's background matches its parent's, mark it as inherited:</p>
+
+<pre><code><span class="kw">const</span> bg = cs.backgroundColor
+<span class="kw">const</span> parent = el.parentElement
+<span class="kw">if</span> (parent) {
+  <span class="kw">const</span> parentBg = <span class="fn">getComputedStyle</span>(parent).backgroundColor
+  <span class="kw">if</span> (bg === parentBg && !el.style?.backgroundColor) {
+    inheritedBg = <span class="kw">true</span>
+  }
+}</code></pre>
+
+<p>We got the discrepancies down from 283 to about 30. But then we hit a wall.</p>
+
+<h3>The comparisons that kept lying</h3>
+
+<p>
+  Font-size, font-weight, font-family, and border comparisons produced false positives <em>constantly</em>. The element matching was correct by text content, but the DOM element's computed styles didn't correspond to what we expected because of CSS inheritance, specificity, and browser rendering differences.
+</p>
+
+<p>
+  We removed them one by one. Each time, we'd see a false positive, investigate, confirm the matching was wrong or the comparison was misleading, and disable it.
+</p>
+
+<div class="pullquote">
+  The property-by-property comparison is only as good as the element matching. And the element matching is fundamentally unreliable.
+</div>
+
+<p>
+  By the end, we'd stripped the comparison down to just colors and border-radius. Everything else was too noisy to trust.
+</p>
+
+<div class="divider">&middot; &middot; &middot;</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- Chapter 5 -->
+<!-- ════════════════════════════════════════════ -->
+
+<div class="chapter-label" id="content-comparison">Chapter 5</div>
+<h2>Content Comparison &mdash; What Actually Worked</h2>
+
+<p>
+  While the visual comparison was struggling, one thing worked beautifully: <strong>text content verification</strong>.
+</p>
+
+<p>
+  The approach is dead simple &mdash; no element matching required:
+</p>
+
+<ol>
+  <li>Extract every TEXT node's content from the Figma frame</li>
+  <li>Collect all text from the DOM (within the scoped area)</li>
+  <li>For each Figma text, check: does this exact string exist anywhere on the page?</li>
+</ol>
+
+<p>
+  If it doesn't, it's either missing, changed, or has a capitalization difference. No matching, no false positives from wrong element pairs.
+</p>
+
+<p>But we discovered a subtle problem: <strong>invisible character differences</strong>.</p>
+
+<p>Figma and the DOM represent text differently at the Unicode level:</p>
+
+<table>
+  <tr><th>Character</th><th>Figma</th><th>DOM</th></tr>
+  <tr><td>Apostrophe</td><td><code>&rsquo;</code> U+2019</td><td><code>'</code> U+0027</td></tr>
+  <tr><td>Dash</td><td><code>&mdash;</code> U+2014</td><td><code>-</code> U+002D</td></tr>
+  <tr><td>Space</td><td><code>&nbsp;</code> U+00A0</td><td><code> </code> U+0020</td></tr>
+</table>
+
+<p>The text <em>looks identical</em> to the eye but fails a strict string comparison. We built a normalization pipeline:</p>
+
+<pre><code><span class="kw">function</span> <span class="fn">normalizeTextForComparison</span>(text: <span class="prop">string</span>): <span class="prop">string</span> {
+  <span class="kw">return</span> text
+    .<span class="fn">replace</span>(<span class="str">/[\u2018\u2019\u201A\u201B]/g</span>, <span class="str">"'"</span>)  <span class="cm">// smart quotes</span>
+    .<span class="fn">replace</span>(<span class="str">/[\u201C\u201D\u201E\u201F]/g</span>, <span class="str">'"'</span>)   <span class="cm">// double quotes</span>
+    .<span class="fn">replace</span>(<span class="str">/[\u2013\u2014]/g</span>, <span class="str">'-'</span>)                <span class="cm">// dashes</span>
+    .<span class="fn">replace</span>(<span class="str">/[\u00A0\u2000-\u200A]/g</span>, <span class="str">' '</span>)       <span class="cm">// special spaces</span>
+    .<span class="fn">replace</span>(<span class="str">/[\u200B\u200C\u200D\uFEFF]/g</span>, <span class="str">''</span>)    <span class="cm">// zero-width chars</span>
+    .<span class="fn">replace</span>(<span class="str">/\s+/g</span>, <span class="str">' '</span>).<span class="fn">trim</span>()
+}</code></pre>
+
+<p>
+  Even after all that, some strings still didn't match. Our final fallback: strip everything except letters and numbers and compare. If <code>"replacethisuserspersonalinformation"</code> matches on both sides, the text is the same.
+</p>
+
+<p>
+  Content comparison became the most reliable feature of the extension. It catches missing text, changed copy, and capitalization differences with zero false positives.
+</p>
+
+<div class="divider">&middot; &middot; &middot;</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- Chapter 6 -->
+<!-- ════════════════════════════════════════════ -->
+
+<div class="chapter-label" id="the-ai-pivot">Chapter 6</div>
+<h2>The AI Pivot &mdash; Screenshots Over Properties</h2>
+
+<p>
+  After weeks of fighting element matching, we had a realization:
+</p>
+
+<div class="pullquote">
+  Matching Figma nodes to DOM elements is a fundamentally unsolvable problem. Figma's layer structure and the DOM tree are different representations of the same visual. Trying to map between them programmatically will always be brittle.
+</div>
+
+<p>
+  But there's something that <em>can</em> compare two visuals reliably: a pair of eyes. And Claude is multimodal.
+</p>
+
+<h3>The screenshot approach</h3>
+
+<p>New flow, radically simpler:</p>
+
+<div class="diagram">User clicks "Compare with Figma"
+       &darr;
+1. chrome.tabs.captureVisibleTab()  &xrarr;  page screenshot
+2. Figma Images API                 &xrarr;  design screenshot
+3. Figma node tree                  &xrarr;  property data table
+4. DOM scan                         &xrarr;  CSS property data table
+       &darr;
+All four sent to Claude
+       &darr;
+Claude compares visually + cross-references data
+       &darr;
+"font-size is 16px, should be 14px"</div>
+
+<p>
+  No element matching. No property comparison engine. No IoU thresholds. Just: <em>here are two images and two data tables, tell me what's different.</em>
+</p>
+
+<h3>The precision problem</h3>
+
+<p>
+  The first version was imprecise. Claude would say "the label looks larger" or "typography differs." Correct, but not actionable &mdash; developers need exact values.
+</p>
+
+<p>
+  We tried telling Claude to use the screenshots only. That produced vague descriptions. We tried feeding it just the property data. That missed visual issues. The breakthrough was the <strong>hybrid approach</strong>:
+</p>
+
+<ol>
+  <li><strong>Screenshots</strong> for <em>finding</em> issues (what looks different?)</li>
+  <li><strong>Property tables</strong> for <em>exact values</em> (Figma says 14px, DOM says 16px)</li>
+</ol>
+
+<p>But we hit another problem: Claude would look at the screenshots, identify visual issues, and then <em>ignore the property tables</em> when writing its report. Subtle differences (like 14px vs 16px) wouldn't be noticed visually, so they'd never be reported.</p>
+
+<h3>The data-first insight</h3>
+
+<p>
+  We flipped the instruction order:
+</p>
+
+<pre><code><span class="cm">// Before (missed subtle differences)</span>
+<span class="str">"Look at screenshots → then check data"</span>
+
+<span class="cm">// After (catches everything)</span>
+<span class="str">"Compare the data tables first → then use screenshots for extras"</span></code></pre>
+
+<p>
+  The prompt now explicitly tells Claude:
+</p>
+
+<pre><code><span class="str">Step 1: Compare the property tables row by row.</span>
+<span class="str">        Match elements by text content.</span>
+<span class="str">        Report EVERY value that differs.</span>
+
+<span class="str">Step 2: Check text content list against the page.</span>
+
+<span class="str">Step 3: Use screenshots for layout/visual issues</span>
+<span class="str">        not captured in the data.</span></code></pre>
+
+<p>
+  This way, a 14px vs 16px font-size difference is caught from the data in Step 1 &mdash; Claude doesn't need to "see" it in the screenshot. The screenshots are a safety net for things the data can't express: alignment, visual weight, overall feel.
+</p>
+
+<div class="divider">&middot; &middot; &middot;</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- Chapter 7 -->
+<!-- ════════════════════════════════════════════ -->
+
+<div class="chapter-label" id="what-we-landed-on">Chapter 7</div>
+<h2>What We Landed On</h2>
+
+<p>
+  The extension today has two modes, each doing what it does well:
+</p>
+
+<table>
+  <tr><th>Mode</th><th>What it checks</th><th>Requires</th></tr>
+  <tr><td><strong>Token Scan</strong></td><td>Dew design system compliance &mdash; are CSS values valid tokens?</td><td>Nothing (runs locally)</td></tr>
+  <tr><td><strong>Figma Compare</strong></td><td>Visual + data + content comparison against a Figma frame</td><td>Figma token + Claude API key</td></tr>
+</table>
+
+<p>Figma Compare sends Claude:</p>
+
+<ul>
+  <li>A page screenshot (auto-captured)</li>
+  <li>A Figma frame screenshot (auto-fetched via API)</li>
+  <li>A Figma property table (font sizes, weights, colors, spacing)</li>
+  <li>A DOM property table (computed CSS values)</li>
+  <li>A Figma text content list (for content verification)</li>
+</ul>
+
+<p>
+  Claude returns grouped findings with exact values and copy-pasteable CSS fixes. Each finding names the specific element, states what the value is, and what it should be.
+</p>
+
+<h3>The honest assessment</h3>
+
+<p>
+  Content comparison works great. It catches missing text, changed copy, and capitalization differences with near-zero false positives.
+</p>
+
+<p>
+  Visual comparison via AI is good but not perfect. Claude occasionally misidentifies elements or reports differences that aren't there. But the signal-to-noise ratio is dramatically better than the element-matching approach.
+</p>
+
+<p>
+  Element-level matching between Figma and DOM &mdash; the thing we originally set out to build &mdash; remains an unsolved problem. Figma layers and DOM elements are fundamentally different representations. The pragmatic solution is to not match them at all, and let AI do what AI is good at: looking at two pictures and telling you what's different.
+</p>
+
+<div class="pullquote">
+  The best version of this tool does fewer things than what we first imagined. But the things it does, it does correctly.
+</div>
+
+<h3>What's next</h3>
+
+<p>
+  We're still iterating. Better prompt engineering could make the AI more precise. We could add Dew component spec awareness to the AI prompt, so it knows what tokens a Button should use. We could cache results so repeated comparisons are instant.
+</p>
+
+<p>
+  But the architecture is right: screenshots for finding issues, structured data for exact values, and AI to bridge the gap between them.
+</p>
+
+<!-- Footer -->
+<div class="footnote">
+  <p>
+    Built with TypeScript, React, esbuild, and the Chrome Extension Manifest V3 APIs. AI comparison powered by Claude (Anthropic). Figma integration via the Figma REST API.
+  </p>
+  <p style="margin-top: 8px;">
+    Thanks to Mamtha for the original VQA automation idea, and Sivachidambaram for the Figma frame comparison concept that shaped the direction of the project.
+  </p>
+</div>
+
+</article>
+</div>
+
+<script>
+// Theme
+function toggleTheme() {
+  const html = document.documentElement
+  const current = html.getAttribute('data-theme')
+  html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark')
+  localStorage.setItem('theme', html.getAttribute('data-theme'))
+  updateIcon()
+}
+
+function updateIcon() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+  document.getElementById('themeIcon').textContent = isDark ? '\u2600' : '\u263E'
+}
+
+const saved = localStorage.getItem('theme')
+if (saved) document.documentElement.setAttribute('data-theme', saved)
+else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.setAttribute('data-theme', 'dark')
+updateIcon()
+
+// TOC active state
+const tocLinks = document.querySelectorAll('.toc-rail a')
+const sections = Array.from(tocLinks).map(a => document.getElementById(a.getAttribute('href').slice(1)))
+
+function updateToc() {
+  let active = sections[0]
+  for (const s of sections) {
+    if (s && s.getBoundingClientRect().top <= 80) active = s
+  }
+  tocLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + (active?.id || ''))
+  })
+}
+window.addEventListener('scroll', updateToc, { passive: true })
+updateToc()
+</script>
+
+</body>
+</html>
