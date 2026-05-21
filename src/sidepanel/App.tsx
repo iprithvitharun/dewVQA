@@ -377,30 +377,84 @@ const SEVERITY_LABEL: Record<Severity, string> = {
   low: 'Low',
 }
 
-/** Build the "Issue" cell: what's wrong, on which element. */
-function issueText(d: FigmaComparisonReport['discrepancies'][number]): string {
-  const where = d.element.description || d.element.tagName || d.figmaNodeName || 'element'
-  return `${d.property} on ${where} — Figma: ${d.figmaValue}; live: ${d.domValue}`
+interface IssueRow {
+  issue: string
+  solution: string
+  rationale: string
 }
 
-/** Build the "Rationale" cell: severity + grouped-finding description if any. */
-function rationaleText(
-  d: FigmaComparisonReport['discrepancies'][number],
-  findingDesc: string | undefined,
-): string {
-  const sev = `${SEVERITY_LABEL[d.severity]} severity`
-  if (findingDesc) return `${sev}. ${findingDesc}`
-  return `${sev}. Diverges from the Figma spec on \`${d.figmaNodeName}\`.`
+/** Strip markdown emphasis so the table stays readable. */
+function stripMd(text: string): string {
+  return text.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/`([^`]+)`/g, '$1')
 }
 
-function generateFigmaMarkdown(report: FigmaComparisonReport): string {
-  // Map each discrepancy id → the AI grouped-finding description (for Rationale).
+/** Turn a "- finding\n- finding" description into a single, comma-joined sentence. */
+function flattenBullets(text: string): string {
+  return text
+    .split('\n')
+    .map((l) => l.trim().replace(/^[-*]\s*/, ''))
+    .filter(Boolean)
+    .join('; ')
+}
+
+/** Build rows from the AI's grouped findings (the same data shown in the side panel). */
+function rowsFromAiFindings(report: FigmaComparisonReport): IssueRow[] {
+  const findings = report.aiEnhancement?.groupedFindings ?? []
+  return findings.map((f) => {
+    const body = stripMd(flattenBullets(f.description))
+    const issue = `${f.title} — ${body}`
+    const isCopy = /^copy:/i.test(f.title)
+    const solution = isCopy
+      ? `Update the copy to match the Figma spec.`
+      : f.cssFix?.trim()
+        ? stripMd(f.cssFix.trim().replace(/\n+/g, ' '))
+        : `Apply the values from the Figma spec to this element.`
+    const rationale = isCopy
+      ? `Copy must match the design system spec; users see the live wording.`
+      : `Visual property diverges from the Figma source of truth.`
+    return { issue, solution, rationale }
+  })
+}
+
+/** Build rows from the deterministic discrepancy engine. */
+function rowsFromDiscrepancies(report: FigmaComparisonReport): IssueRow[] {
   const findingDescById = new Map<string, string>()
   for (const f of report.aiEnhancement?.groupedFindings ?? []) {
     for (const id of f.discrepancyIds) {
       if (!findingDescById.has(id)) findingDescById.set(id, f.description)
     }
   }
+  return report.discrepancies.map((d) => {
+    const where = d.element.description || d.element.tagName || d.figmaNodeName || 'element'
+    const issue = `${d.property} on ${where} — Figma: ${d.figmaValue}; live: ${d.domValue}`
+    const findingDesc = findingDescById.get(d.id)
+    const rationale = findingDesc
+      ? `${SEVERITY_LABEL[d.severity]} severity. ${stripMd(flattenBullets(findingDesc))}`
+      : `${SEVERITY_LABEL[d.severity]} severity. Diverges from Figma node ${d.figmaNodeName}.`
+    return { issue, solution: d.suggestion, rationale }
+  })
+}
+
+/** De-duplicate rows by their (case-insensitive) issue text. */
+function dedupeRows(rows: IssueRow[]): IssueRow[] {
+  const seen = new Set<string>()
+  const out: IssueRow[] = []
+  for (const r of rows) {
+    const key = r.issue.toLowerCase()
+    if (seen.has(key)) continue
+    seen.add(key)
+    out.push(r)
+  }
+  return out
+}
+
+function generateFigmaMarkdown(report: FigmaComparisonReport): string {
+  // AI findings come first (they're what the user sees in the side panel),
+  // then any deterministic discrepancies the AI didn't already cover.
+  const rows = dedupeRows([
+    ...rowsFromAiFindings(report),
+    ...rowsFromDiscrepancies(report),
+  ])
 
   const lines: string[] = [
     `# Figma vs. Live Build`,
@@ -408,12 +462,16 @@ function generateFigmaMarkdown(report: FigmaComparisonReport): string {
     `- **Captured:** ${cell(report.timestamp)}`,
     `- **Figma frame:** ${cell(report.figmaUrl)}`,
     `- **Live page:** ${cell(report.pageUrl)}`,
-    `- **Issues found:** ${report.discrepancies.length}`,
+    `- **Issues found:** ${rows.length}`,
     ``,
   ]
 
-  if (report.discrepancies.length === 0) {
-    lines.push(`_No discrepancies — the live build matches the Figma frame for every paired node._`, ``)
+  if (report.aiEnhancement?.summary) {
+    lines.push(`> ${stripMd(report.aiEnhancement.summary.trim().replace(/\n+/g, ' '))}`, ``)
+  }
+
+  if (rows.length === 0) {
+    lines.push(`_No discrepancies — the live build matches the Figma frame._`, ``)
     return lines.join('\n')
   }
 
@@ -421,15 +479,8 @@ function generateFigmaMarkdown(report: FigmaComparisonReport): string {
     `| # | Issue | Proposed solution | Rationale |`,
     `|---|-------|-------------------|-----------|`,
   )
-
-  report.discrepancies.forEach((d, i) => {
-    const row = [
-      String(i + 1),
-      issueText(d),
-      d.suggestion,
-      rationaleText(d, findingDescById.get(d.id)),
-    ]
-    lines.push(`| ${row.map(cell).join(' | ')} |`)
+  rows.forEach((r, i) => {
+    lines.push(`| ${cell(String(i + 1))} | ${cell(r.issue)} | ${cell(r.solution)} | ${cell(r.rationale)} |`)
   })
   lines.push(``)
 
