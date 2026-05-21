@@ -360,50 +360,193 @@ function downloadMd(md: string, prefix: string): void {
   URL.revokeObjectURL(url)
 }
 
+/** Make a value safe to drop into a single Markdown table cell. */
+function cell(value: string | number | undefined | null): string {
+  if (value === undefined || value === null || value === '') return '—'
+  return String(value)
+    .replace(/\|/g, '\\|')
+    .replace(/\r?\n+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+/** Short label for which surface a discrepancy lives on (region + parent). */
+function surfaceLabel(d: FigmaComparisonReport['discrepancies'][number]): string {
+  const parts: string[] = []
+  if (d.element.dew?.componentName) parts.push(d.element.dew.componentName)
+  else if (d.element.role) parts.push(d.element.role)
+  if (d.element.parentContext) parts.push(d.element.parentContext)
+  else if (d.element.region) parts.push(d.element.region)
+  return parts.filter(Boolean).join(' · ') || d.figmaNodeName || '—'
+}
+
+/** Compact "what changed" description for the element column. */
+function elementLabel(d: FigmaComparisonReport['discrepancies'][number]): string {
+  const desc = d.element.description || d.element.tagName || d.figmaNodeName
+  return `${d.property} on ${desc}`
+}
+
+/** Map each discrepancy id → the AI finding title that grouped it, if any. */
+function buildFindingIndex(report: FigmaComparisonReport): Map<string, string> {
+  const index = new Map<string, string>()
+  const findings = report.aiEnhancement?.groupedFindings ?? []
+  for (const f of findings) {
+    for (const id of f.discrepancyIds) {
+      if (!index.has(id)) index.set(id, f.title)
+    }
+  }
+  return index
+}
+
+const SEVERITY_BADGE: Record<Severity, string> = {
+  blocker: '🔴 Blocker',
+  high: '🟠 High',
+  medium: '🟡 Medium',
+  low: '🟢 Low',
+}
+
 function generateFigmaMarkdown(report: FigmaComparisonReport): string {
+  const findingIndex = buildFindingIndex(report)
+  const ai = report.aiEnhancement
+  const totalIssues =
+    report.summary.blocker + report.summary.high + report.summary.medium + report.summary.low
+
   const lines: string[] = [
-    `# Figma Comparison Report`,
+    `# Figma vs. Live Build — VQA Report`,
     ``,
-    `- **Figma URL**: ${report.figmaUrl}`,
-    `- **Page URL**: ${report.pageUrl}`,
-    `- **Date**: ${report.timestamp}`,
-    `- **Figma nodes**: ${report.totalFigmaNodes}`,
-    `- **DOM elements**: ${report.totalDomElements}`,
-    `- **Matched pairs**: ${report.matchedPairs}`,
+    `> Side-by-side audit of what Figma specifies against what's actually rendered in the browser.`,
     ``,
-    `## Summary`,
-    ``,
-    `| Severity | Count |`,
-    `|----------|-------|`,
-    `| Blocker  | ${report.summary.blocker} |`,
-    `| High     | ${report.summary.high} |`,
-    `| Medium   | ${report.summary.medium} |`,
-    `| Low      | ${report.summary.low} |`,
+    `| Field | Value |`,
+    `|-------|-------|`,
+    `| Captured | ${cell(report.timestamp)} |`,
+    `| Figma frame | ${cell(report.figmaUrl)} |`,
+    `| Live page | ${cell(report.pageUrl)} |`,
+    `| Figma nodes inspected | ${report.totalFigmaNodes} |`,
+    `| Page elements inspected | ${report.totalDomElements} |`,
+    `| Nodes successfully paired | ${report.matchedPairs} |`,
+    `| Discrepancies surfaced | ${totalIssues} |`,
     ``,
   ]
 
-  if (report.discrepancies.length > 0) {
-    lines.push(`## Discrepancies`, ``)
-    for (const d of report.discrepancies) {
-      lines.push(`### ${d.id} (${d.severity.toUpperCase()})`)
-      lines.push(``)
-      lines.push(`- **Property**: ${d.property}`)
-      lines.push(`- **Figma**: ${d.figmaValue} (node: ${d.figmaNodeName})`)
-      lines.push(`- **DOM**: ${d.domValue}`)
-      lines.push(`- **Element**: ${d.element.description}`)
-      lines.push(`- **Match confidence**: ${Math.round(d.matchConfidence * 100)}%`)
-      lines.push(`- **Fix hint**: ${d.suggestion}`)
-      lines.push(``)
-    }
+  // ─── Severity snapshot ─────────────────────────────────────
+  lines.push(
+    `## Severity snapshot`,
+    ``,
+    `| Severity | Count | What it means |`,
+    `|----------|-------|---------------|`,
+    `| 🔴 Blocker | ${report.summary.blocker} | Ship-stopping divergence from the design |`,
+    `| 🟠 High | ${report.summary.high} | Clearly visible mismatch users will notice |`,
+    `| 🟡 Medium | ${report.summary.medium} | Off-spec but unlikely to confuse users |`,
+    `| 🟢 Low | ${report.summary.low} | Minor polish gap |`,
+    ``,
+  )
+
+  // ─── AI headline ───────────────────────────────────────────
+  if (ai?.summary) {
+    lines.push(`## Headline takeaways`, ``, ai.summary.trim(), ``)
+  }
+  if (ai?.visualDiffNotes) {
+    lines.push(`## Visual diff notes`, ``, ai.visualDiffNotes.trim(), ``)
   }
 
+  // ─── Per-discrepancy table (the centerpiece) ───────────────
+  if (report.discrepancies.length > 0) {
+    lines.push(
+      `## Discrepancy log`,
+      ``,
+      `Each row is a single mismatch between the Figma frame and the live page. Use the **Track** column to mark progress as the team works through fixes.`,
+      ``,
+      `| # | Severity | Surface | What's off | Spec'd in Figma | Showing in product | Theme | Recommended fix | Match confidence | Track |`,
+      `|---|----------|---------|-----------|------------------|--------------------|-------|------------------|------------------|-------|`,
+    )
+    report.discrepancies.forEach((d, i) => {
+      const row = [
+        String(i + 1),
+        SEVERITY_BADGE[d.severity],
+        surfaceLabel(d),
+        elementLabel(d),
+        `${cell(d.figmaValue)} (node: ${cell(d.figmaNodeName)})`,
+        cell(d.domValue),
+        findingIndex.get(d.id) ?? '—',
+        cell(d.suggestion),
+        `${Math.round(d.matchConfidence * 100)}%`,
+        '☐ Open',
+      ]
+      lines.push(`| ${row.map(cell).join(' | ')} |`)
+    })
+    lines.push(``)
+
+    // ─── Per-row detail (expanded reference for each row) ────
+    lines.push(
+      `### Per-row detail`,
+      ``,
+      `Expanded context for every row above, including selectors and node ids you'll need to fix it.`,
+      ``,
+    )
+    report.discrepancies.forEach((d, i) => {
+      lines.push(
+        `#### ${i + 1}. ${d.property} — ${SEVERITY_BADGE[d.severity]}`,
+        ``,
+        `- **Surface:** ${surfaceLabel(d)}`,
+        `- **Element:** ${d.element.description}`,
+        `- **Selector:** \`${d.element.selector}\``,
+        `- **Figma node:** ${d.figmaNodeName} (\`${d.figmaNodeId}\`)`,
+        `- **Spec'd value:** \`${d.figmaValue}\``,
+        `- **Live value:** \`${d.domValue}\``,
+        `- **Theme:** ${findingIndex.get(d.id) ?? 'Standalone finding'}`,
+        `- **Match confidence:** ${Math.round(d.matchConfidence * 100)}%`,
+        `- **Recommended fix:** ${d.suggestion}`,
+        `- **Discrepancy id:** \`${d.id}\``,
+        ``,
+      )
+    })
+  } else {
+    lines.push(`## Discrepancy log`, ``, `_No discrepancies surfaced — the live build matches the Figma frame for every paired node._`, ``)
+  }
+
+  // ─── AI grouped findings with CSS fixes ────────────────────
+  if (ai && ai.groupedFindings.length > 0) {
+    lines.push(`## Grouped fixes (with CSS)`, ``)
+    ai.groupedFindings.forEach((f, i) => {
+      lines.push(
+        `### ${i + 1}. ${f.title}`,
+        ``,
+        f.description.trim(),
+        ``,
+      )
+      if (f.discrepancyIds.length > 0) {
+        lines.push(`**Covers rows:** ${f.discrepancyIds.map((id) => `\`${id}\``).join(', ')}`, ``)
+      }
+      if (f.cssFix?.trim()) {
+        lines.push('```css', f.cssFix.trim(), '```', ``)
+      }
+    })
+  }
+
+  // ─── Unmatched on either side ──────────────────────────────
   if (report.unmatchedFigmaNodes.length > 0) {
-    lines.push(`## Unmatched Figma Nodes`, ``)
-    for (const name of report.unmatchedFigmaNodes) {
-      lines.push(`- ${name}`)
-    }
+    lines.push(
+      `## In Figma but not on the page`,
+      ``,
+      `Nodes from the design that the matcher couldn't pair to anything in the live DOM. Often these are missing implementations — worth a quick sanity check.`,
+      ``,
+    )
+    for (const name of report.unmatchedFigmaNodes) lines.push(`- ${name}`)
     lines.push(``)
   }
+
+  if (report.unmatchedDomElements && report.unmatchedDomElements.length > 0) {
+    lines.push(
+      `## On the page but not in Figma`,
+      ``,
+      `Elements rendered in the browser that don't correspond to any node in the Figma frame. May be intentional (data-driven UI) or extra cruft.`,
+      ``,
+    )
+    for (const sel of report.unmatchedDomElements) lines.push(`- \`${sel}\``)
+    lines.push(``)
+  }
+
+  lines.push(`---`, ``, `_Generated by Dew VQA. Track column uses ☐ Open / ☑ Fixed / ⏳ In review — edit inline as you triage._`, ``)
 
   return lines.join('\n')
 }
