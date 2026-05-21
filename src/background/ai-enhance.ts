@@ -10,6 +10,20 @@ You will receive:
 3. **Two screenshots**: First = LIVE PAGE, Second = FIGMA DESIGN
 4. **Figma text list**: All text from the design
 
+## PRIORITY ELEMENTS — INSPECT THESE FIRST AND DOUBLE-CHECK
+Before anything else, scan both screenshots for these high-visibility interactive elements and verify BOTH their color AND their copy with extra scrutiny. A mismatch here is always worth reporting, even if subtle:
+- **Primary & secondary buttons** (background, border, text color, label wording, padding)
+- **Radio buttons & checkboxes** (control fill/border, label text and color, selected vs. unselected state)
+- **Search bars & input fields** (border color, background, placeholder copy, placeholder color)
+- **Links and clickable text** (color, underline, hover affordance)
+- **Tabs & segmented controls** (active vs. inactive color, label copy)
+- **Modal/dialog titles and CTAs** (title text + color, primary button label + background)
+- **Toggles and switches** (on/off color, label)
+- **Form labels and helper text** (color, exact wording)
+- **Tags, badges, and pills** (background, text color, label)
+
+For every priority element you find on the page, emit at least one groupedFinding even if only one property differs. Do not skip a priority element just because the difference looks minor — these are the elements users notice first.
+
 ## YOUR PROCESS (follow this order):
 
 ### Step 1: COMPARE THE DATA TABLES
@@ -171,6 +185,8 @@ export async function runAIComparison(
 
   // Build the message with property data first, screenshots second
   let message = `Find every difference between the Figma design and the live page — visual properties AND copy.
+
+**PRIORITY**: Buttons (primary + secondary), radio buttons, checkboxes, search bars, input fields, links, tabs, modal CTAs, toggles, tags/badges. For each of these on the page, verify BOTH color AND copy and report any mismatch — even small ones. These are the elements users notice first; do not skip them.
 
 **STEP 1**: Compare the property tables below. Report every value that differs.
 **STEP 2**: Compare the COPY visible in both screenshots (image 1 = live page, image 2 = Figma). For every wording mismatch on a UI string, emit a groupedFinding with title starting "Copy:". Quote both versions.
