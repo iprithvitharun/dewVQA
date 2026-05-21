@@ -2,7 +2,7 @@ import type { AIEnhancedReport, NormalizedFigmaProps, ExtractedElement } from '.
 import { callClaude } from './claude-api'
 import { cssColorToHex, parsePx } from '../shared/color-utils'
 
-const SYSTEM_PROMPT = `You are an expert design QA tester. You find every difference between a Figma design and its live web implementation.
+const SYSTEM_PROMPT = `You are an expert design QA tester. You find every difference between a Figma design and its live web implementation — visual AND textual.
 
 You will receive:
 1. **Figma property table**: Exact values from the design file (font sizes, weights, colors, spacing)
@@ -12,7 +12,7 @@ You will receive:
 
 ## YOUR PROCESS (follow this order):
 
-### Step 1: COMPARE THE DATA TABLES (this is your primary job)
+### Step 1: COMPARE THE DATA TABLES
 Go through EVERY text element in the Figma table. Find the matching text in the DOM table (match by the text content). Compare:
 - **font-size**: If Figma says 14px and DOM says 16px → REPORT IT
 - **font-weight**: If Figma says 600 and DOM says 400 → REPORT IT
@@ -20,32 +20,53 @@ Go through EVERY text element in the Figma table. Find the matching text in the 
 
 Then compare containers: fill colors, border-radius, padding values.
 
-Report ALL differences found in the data, even small ones like 1-2px. These are precise measurements, not guesses.
+Report ALL differences found in the data, even small ones like 1-2px.
 
-### Step 2: CHECK TEXT CONTENT
-For each text in the Figma text list, verify it appears on the live page. Report any missing or changed text.
+### Step 2: COMPARE COPY VISIBLE IN BOTH SCREENSHOTS (very important — do not skip)
+Read the actual text rendered in BOTH screenshots and compare wording. Cover:
+- Headings, titles, modal/dialog labels
+- Button labels and link text
+- Form field labels, helper text, **input placeholders**, error messages
+- Empty-state copy, tooltips, badges, tags
+- Radio/checkbox option labels
+- Section subtitles and instructional microcopy
 
-### Step 3: USE SCREENSHOTS FOR EXTRAS
-Look at the screenshots for things NOT in the data: layout issues, alignment, missing elements, visual inconsistencies.
+For every copy mismatch, emit a groupedFinding whose title starts with **"Copy:"** (e.g. "Copy: Add button label"). In the description, quote both versions verbatim:
+- description: "Figma says **\\"Add ticket\\"**, live page says **\\"Add\\"**"
+
+### Step 3: IGNORE DUMMY / TEST DATA
+The live page is a sandbox with seed data that does NOT match the design's mock content. Do NOT flag these as copy mismatches:
+- Ticket IDs and reference numbers (#INC-8, #ember5421, INC-1234, T-001)
+- User names, email addresses, avatars
+- Dates, times, timestamps, "X hours ago", "Today", relative times
+- Counts and numeric values that come from data ("141 days left", "8 tickets")
+- Lorem ipsum, sample subjects/descriptions, placeholder rows in lists/tables
+- Sample tags, sample categories that obviously come from a database
+- Any text that looks generated, randomised, or environment-specific
+
+Only flag copy that is part of the **product chrome** — the static UI strings the design system controls. When in doubt, ask: "Would this text be the same for every customer?" If no, skip it.
+
+### Step 4: USE SCREENSHOTS FOR LAYOUT EXTRAS
+Look at the screenshots for things not covered above: spacing, alignment, missing elements, ordering, icon differences.
 
 ## FORMAT:
 - Use exact values: "font-size is **16px**, should be **14px**"
 - Use exact hex: "color is **#485a68**, should be **#12334c**"
 - Name the specific element: "Name field label", not "a label"
-- For CSS fixes, use the DOM selector from the table
+- For CSS fixes, use the DOM selector from the table. Copy fixes don't need a cssFix — leave it as an empty string.
 
 Respond ONLY with valid JSON (no markdown fences):
 {
-  "summary": "2-3 sentence overview.",
+  "summary": "2-3 sentence overview that explicitly mentions copy issues if any exist.",
   "groupedFindings": [
     {
-      "title": "Element name",
-      "description": "One finding per line:\\n- font-size is **16px**, should be **14px**\\n- font-weight is **400**, should be **600**",
+      "title": "Element name (prefix with 'Copy:' for wording mismatches)",
+      "description": "One finding per line:\\n- font-size is **16px**, should be **14px**\\n- Figma says **\\"Add ticket\\"**, live page says **\\"Add\\"**",
       "discrepancyIds": [],
       "cssFix": ".selector {\\n  font-size: 14px;\\n}"
     }
   ],
-  "visualDiffNotes": "Layout/alignment observations from screenshots."
+  "visualDiffNotes": "Layout/alignment observations from screenshots — NOT copy issues (those go in groupedFindings)."
 }`
 
 /**
@@ -149,11 +170,12 @@ export async function runAIComparison(
   images.push({ base64: figmaBase64, mediaType: 'image/png' })
 
   // Build the message with property data first, screenshots second
-  let message = `Find every difference between the Figma design and the live page.
+  let message = `Find every difference between the Figma design and the live page — visual properties AND copy.
 
-**STEP 1**: Compare the two property tables below. Match elements by their text content. Report every value that differs.
-**STEP 2**: Check the text content list against the page.
-**STEP 3**: Look at the screenshots (image 1 = live page, image 2 = Figma) for layout/visual issues not in the data.
+**STEP 1**: Compare the property tables below. Report every value that differs.
+**STEP 2**: Compare the COPY visible in both screenshots (image 1 = live page, image 2 = Figma). For every wording mismatch on a UI string, emit a groupedFinding with title starting "Copy:". Quote both versions.
+**STEP 3**: IGNORE seed/dummy data. The live page is a sandbox — do not flag ticket IDs, user names, dates, counts, sample subjects, or anything that looks like database content. Only flag static product strings.
+**STEP 4**: Use the screenshots for layout/alignment issues not in the data.
 
 ${buildFigmaPropertiesTable(figmaNodes)}
 
@@ -162,7 +184,7 @@ ${buildDomPropertiesTable(domElements)}`
   // Add Figma text content for content verification
   const textNodes = figmaNodes.filter(n => n.type === 'TEXT' && n.textContent && n.textContent.trim().length > 2)
   if (textNodes.length > 0) {
-    message += `\n## Figma text content (verify each appears on the live page)\n`
+    message += `\n## Figma text content (compare each to what's visible on the live page screenshot)\nFor each line below, check whether the live page renders the same wording for the same UI element. Skip lines that look like sample data (IDs, names, dates, counts).\n`
     for (const n of textNodes) {
       message += `- "${n.textContent!.trim()}"\n`
     }
